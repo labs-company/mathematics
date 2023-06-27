@@ -2,6 +2,17 @@ import logo from "../assets/logo-page.png";
 import { Disclosure } from "@headlessui/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
+const links = [
+  { name: "Suma", href: "#", current: false },
+  { name: "Resta", href: "#", current: false },
+  { name: "Multiplicacion", href: "#", current: false },
+  { name: "Division", href: "#", current: false },
+];
+
+function classNames(...clases: string[]) {
+  return clases.filter(Boolean).join(" ");
+}
+
 export function Navbar() {
   return (
     <Disclosure as="nav" className="bg-slate-200">
@@ -31,6 +42,25 @@ export function Navbar() {
                   src={logo}
                   alt="Math"
                 />
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex space-x-4">
+                    {links.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-sm font-medium"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
