@@ -32,7 +32,7 @@ export function Navbar() {
                 </Disclosure.Button>
               </div>
 
-              <div className="flex flex-1 items-center justify-between sm:items-stretch">
+              <div className="flex flex-1 items-center justify-between sm:items-stretch sm:justify-between">
                 <div className="flex flex-shrink-0 items-center gap-3">
                   <img
                     className="block h-8 w-auto lg:hidden"
