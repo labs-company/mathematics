@@ -1,12 +1,13 @@
 import logo from "../assets/logo-page.png";
 import { Disclosure } from "@headlessui/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const links = [
-  { name: "Suma", href: "#", current: false },
-  { name: "Resta", href: "#", current: false },
-  { name: "Multiplicacion", href: "#", current: false },
-  { name: "Division", href: "#", current: false },
+  { name: "Suma", href: "/add", current: false },
+  { name: "Resta", href: "/subtract", current: false },
+  { name: "Multiplicacion", href: "/multiply", current: false },
+  { name: "Division", href: "/split", current: false },
 ];
 
 function classNames(...clases: string[]) {
@@ -44,14 +45,16 @@ export function Navbar() {
                     src={logo}
                     alt="Math"
                   />
-                  <p className="text-2xl font-bold">MATEMATICAS</p>
+                  <Link className="text-2xl font-bold" to="/">
+                    MATEMATICAS
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {links.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -61,7 +64,7 @@ export function Navbar() {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

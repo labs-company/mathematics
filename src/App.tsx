@@ -1,14 +1,7 @@
-import { Navbar } from "./components/Navbar";
-import { Mathematics } from "./components/Mathematics";
+import RoutesApplication from "./routes/routes";
 
 function App() {
-  return (
-    <>
-      <Navbar />
-
-      <Mathematics />
-    </>
-  );
+  return <RoutesApplication />;
 }
 
 export default App;
