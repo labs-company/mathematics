@@ -4,6 +4,7 @@ import AddPage from "../pages/AddPage";
 import SubtractPage from "../pages/SubtractPage";
 import MultiplyPage from "../pages/MultiplyPage";
 import SplitPage from "../pages/SplitPage";
+import NotFoundPage from "../pages/NotFoundPage";
 
 export default function RoutesApplication() {
   return (
@@ -13,6 +14,7 @@ export default function RoutesApplication() {
       <Route path="/subtract" element={<SubtractPage />} />
       <Route path="/multiply" element={<MultiplyPage />} />
       <Route path="/split" element={<SplitPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
