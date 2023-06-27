@@ -1,6 +1,6 @@
 import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
 
-type BannerType = { title: string };
+type BannerType = { title: string; handleModalClick: () => void };
 
 export function Banner(props: BannerType) {
   return (
@@ -10,7 +10,10 @@ export function Banner(props: BannerType) {
           {props.title}
         </h1>
       </div>
-      <div className="px-4 py-6 sm:px-6 lg:px-8 cursor-pointer">
+      <div
+        className="px-4 py-6 sm:px-6 lg:px-8 cursor-pointer"
+        onClick={props.handleModalClick}
+      >
         <QuestionMarkCircleIcon
           className="w-10 h-10 text-black"
           aria-hidden="true"
