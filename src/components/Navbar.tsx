@@ -1,3 +1,4 @@
+import logo from "../assets/logo-page.png";
 import { Disclosure } from "@headlessui/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/outline";
 
@@ -17,6 +18,20 @@ export function Navbar() {
                   <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                 )}
               </Disclosure.Button>
+            </div>
+            <div>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <img
+                  className="block h-8 w-auto lg:hidden"
+                  src={logo}
+                  alt="Math"
+                />
+                <img
+                  className="hidden h-8 w-auto lg:block"
+                  src={logo}
+                  alt="Math"
+                />
+              </div>
             </div>
           </div>
         </div>
