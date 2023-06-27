@@ -7,7 +7,10 @@ export default function HomePage() {
     <>
       <Navbar />
 
-      <section className="flex justify-between items-end">
+      <section
+        className="flex justify-between items-end"
+        style={{ height: "calc(100vh - 64px)", overflow: "hidden" }}
+      >
         <div className="text-center self-center flex flex-col items-center gap-5">
           <h1 className="font-bold text-5xl">Matematicas</h1>
           <p className="font-light text-xl whitespace-pre-wrap px-5">
@@ -21,11 +24,11 @@ export default function HomePage() {
             Comienza ahora!
           </button>
         </div>
-        <div>
+        <div className="w-full h-full">
           <img
             src={fondo}
             alt="mathematics"
-            className="object-cover object-left-bottom inset-0 relative z-40"
+            className="object-contain object-right w-full h-full"
           />
         </div>
       </section>
