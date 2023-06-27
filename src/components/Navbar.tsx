@@ -15,7 +15,7 @@ function classNames(...clases: string[]) {
 
 export function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-slate-200">
+    <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center justify-between">
@@ -31,17 +31,20 @@ export function Navbar() {
               </Disclosure.Button>
             </div>
             <div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <img
-                  className="block h-8 w-auto lg:hidden"
-                  src={logo}
-                  alt="Math"
-                />
-                <img
-                  className="hidden h-8 w-auto lg:block"
-                  src={logo}
-                  alt="Math"
-                />
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start gap-20">
+                <div className="flex items-center justify-center gap-5">
+                  <img
+                    className="block h-8 w-auto lg:hidden"
+                    src={logo}
+                    alt="Math"
+                  />
+                  <img
+                    className="hidden h-8 w-auto lg:block"
+                    src={logo}
+                    alt="Math"
+                  />
+                  <p className="text-2xl font-bold">MATEMATICAS</p>
+                </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {links.map((item) => (
@@ -51,8 +54,8 @@ export function Navbar() {
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
+                            : "text-black hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-md font-light"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
