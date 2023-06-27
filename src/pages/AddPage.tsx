@@ -21,7 +21,7 @@ export default function AddPage() {
       <Banner title="Suma" handleModalClick={handleModalClick} />
       <Modal
         title="¿QUE ES LA SUMA?"
-        description="bla bla bla"
+        description="Resumen"
         option={open}
         setOpen={setOpen}
       />
