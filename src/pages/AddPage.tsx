@@ -26,7 +26,9 @@ export default function AddPage() {
         option={open}
         setOpen={setOpen}
       />
-      <div>{JSON.stringify(open)}</div>
+      <section className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <h1>example</h1>
+      </section>
     </>
   );
 }
