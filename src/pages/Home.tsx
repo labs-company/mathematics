@@ -9,7 +9,7 @@ export default function HomePage() {
 
       <section
         className="flex justify-between items-end"
-        style={{ height: "calc(100vh - 64px)", overflow: "hidden" }}
+        style={{ height: "calc(100vh - 100px)", overflow: "hidden" }}
       >
         <div className="text-center self-center flex flex-col items-center gap-5">
           <h1 className="font-bold text-5xl">Matematicas</h1>
@@ -28,7 +28,7 @@ export default function HomePage() {
           <img
             src={fondo}
             alt="mathematics"
-            className="object-contain object-right w-full h-full"
+            className="object-contain object-right-bottom w-full h-full"
           />
         </div>
       </section>

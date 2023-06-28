@@ -32,8 +32,17 @@ export default function AddPage() {
       />
       <section className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <div className="flex justify-around items-center">
-          <div className="border-solid border-2 border-zinc-600 p-10 shadow">
-            <Draggable id="draggble">
+          <div className="border-solid border-2 border-zinc-600 p-10 shadow flex justify-center flex-wrap">
+            <Draggable id="1">
+              <ItemDraggable item={basketball} />
+            </Draggable>
+            <Draggable id="2">
+              <ItemDraggable item={basketball} />
+            </Draggable>
+            <Draggable id="3">
+              <ItemDraggable item={basketball} />
+            </Draggable>
+            <Draggable id="4">
               <ItemDraggable item={basketball} />
             </Draggable>
           </div>

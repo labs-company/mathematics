@@ -13,7 +13,13 @@ export function Draggable(props: propsDrag) {
   };
 
   return (
-    <div ref={setNodeRef} style={style} {...listeners} {...attributes}>
+    <div
+      ref={setNodeRef}
+      style={style}
+      {...listeners}
+      {...attributes}
+      className="p-2"
+    >
       {props.children}
     </div>
   );
