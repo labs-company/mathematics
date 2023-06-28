@@ -11,7 +11,11 @@ export function Droppable(props: propsDrop) {
   };
 
   return (
-    <div ref={setNodeRef} style={style}>
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="border-dashed border-2 border-zinc-900 p-10 shadow"
+    >
       {props.children}
     </div>
   );

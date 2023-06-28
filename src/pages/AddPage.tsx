@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Banner } from "../components/Banner";
 import { Navbar } from "../components/Navbar";
 import { Modal } from "../components/Modal";
-import suma from "../assets/data/add";
 import { ItemDraggable } from "../components/ItemDraggable";
+import { Draggable } from "../components/Draggable";
+import suma from "../assets/data/add";
 import basketball from "../assets/basketball-svgrepo-com.svg";
+import { Droppable } from "../components/Droppable";
 
 export default function AddPage() {
   const [open, setOpen] = useState(false);
@@ -29,7 +31,16 @@ export default function AddPage() {
         setOpen={setOpen}
       />
       <section className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <ItemDraggable item={basketball} />
+        <div className="flex justify-around items-center">
+          <div className="border-solid border-2 border-zinc-600 p-10 shadow">
+            <Draggable id="draggble">
+              <ItemDraggable item={basketball} />
+            </Draggable>
+          </div>
+          <Droppable id="droppable">
+            <span>Drop Here !</span>
+          </Droppable>
+        </div>
       </section>
     </>
   );
