@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Banner } from "../components/Banner";
 import { Navbar } from "../components/Navbar";
 import { Modal } from "../components/Modal";
+import suma from "../assets/data/add";
 
 export default function AddPage() {
   const [open, setOpen] = useState(false);
@@ -20,12 +21,14 @@ export default function AddPage() {
       <Navbar />
       <Banner title="Suma" handleModalClick={handleModalClick} />
       <Modal
-        title="¿QUE ES LA SUMA?"
-        description="Resumen"
+        title={suma.title}
+        description={suma.description}
         option={open}
         setOpen={setOpen}
       />
-      <div>{JSON.stringify(open)}</div>
+      <section className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <h1>example</h1>
+      </section>
     </>
   );
 }
