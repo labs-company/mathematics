@@ -1,8 +1,8 @@
 import { useDroppable } from "@dnd-kit/core";
 
-type propsDrop = { id: string; children: JSX.Element };
+type PropsDrop = { id: string; children: JSX.Element | JSX.Element[] };
 
-export function Droppable(props: propsDrop) {
+export function Droppable(props: PropsDrop) {
   const { isOver, setNodeRef } = useDroppable({
     id: props.id,
   });
@@ -16,7 +16,11 @@ export function Droppable(props: propsDrop) {
       style={style}
       className="border-dashed border-2 border-zinc-900 p-10 shadow"
     >
-      {props.children}
+      {Array.isArray(props.children) ? (
+        props.children.map((child, index) => <div key={index}>{child}</div>)
+      ) : (
+        <div>{props.children}</div>
+      )}
     </div>
   );
 }
