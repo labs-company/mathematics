@@ -11,6 +11,8 @@ export const initilizeBoardDrop = (elementDraggs: ElementDragg[]) => {
       boardSectionKey as Status
     );
   });
+
+  return boardSections;
 };
 
 export const findSectionContainer = (

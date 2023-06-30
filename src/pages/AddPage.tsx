@@ -135,7 +135,7 @@ export default function AddPage() {
   const dropAnimation: DropAnimation = {
     ...defaultDropAnimation,
   };
-  const task = activeId ? getElementDraggId(draggItemContent, activeId) : null;
+  const dragg = activeId ? getElementDraggId(draggItemContent, activeId) : null;
 
   const handleModalClick = () => {
     setOpen(!open);
@@ -151,6 +151,28 @@ export default function AddPage() {
         option={open}
         setOpen={setOpen}
       />
+
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+      >
+        <div>
+          {Object.keys(boardSections).map((boardSectionKey) => (
+            <div key={boardSectionKey}>
+              <BoardDroppableSection
+                id={boardSectionKey}
+                itemDragg={boardSections[boardSectionKey]}
+              />
+            </div>
+          ))}
+          <DragOverlay dropAnimation={dropAnimation}>
+            {dragg ? <ItemDraggable dragg={dragg} /> : null}
+          </DragOverlay>
+        </div>
+      </DndContext>
     </>
   );
 }
