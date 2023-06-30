@@ -1,27 +1,144 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Banner } from "../components/Banner";
 import { Navbar } from "../components/Navbar";
 import { Modal } from "../components/Modal";
 import suma from "../assets/data/add";
-import basketball from "../assets/basketball-svgrepo-com.svg";
-import { Droppable } from "../components/Droppable";
-import { DndContext, DragEndEvent, UniqueIdentifier } from "@dnd-kit/core";
+import {
+  useSensor,
+  useSensors,
+  PointerSensor,
+  KeyboardSensor,
+  DndContext,
+  closestCorners,
+  DragEndEvent,
+  DragStartEvent,
+  DragOverEvent,
+  DragOverlay,
+  DropAnimation,
+  defaultDropAnimation,
+} from "@dnd-kit/core";
+import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
+import { INITIAL_DRAGG } from "../assets/data/add_dragg";
+import { BoardSections as BoardSectionsType } from "../utils/types";
+import { getElementDraggId } from "../utils/elementDragg";
+import { findSectionContainer, initilizeBoardDrop } from "../utils/board";
+import { BoardDroppableSection } from "../components/BoardSectionDrop";
 import { ItemDraggable } from "../components/ItemDraggable";
 
 export default function AddPage() {
   const [open, setOpen] = useState(false);
-  const [parent, setParent] = useState<UniqueIdentifier | null>(null);
+  const draggItemContent = INITIAL_DRAGG;
+  const initialBoard = initilizeBoardDrop(INITIAL_DRAGG);
+  const [boardSections, setBoardSections] =
+    useState<BoardSectionsType>(initialBoard);
 
-  const [draggableItems, _] = useState([
-    { id: "1", content: useRef(basketball) },
-  ]);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragStart = ({ active }: DragStartEvent) => {
+    setActiveId(active.id as string);
+  };
+
+  const handleDragOver = ({ active, over }: DragOverEvent) => {
+    // Find the containers
+    const activeContainer = findSectionContainer(
+      boardSections,
+      active.id as string
+    );
+    const overContainer = findSectionContainer(
+      boardSections,
+      over?.id as string
+    );
+
+    if (
+      !activeContainer ||
+      !overContainer ||
+      activeContainer === overContainer
+    ) {
+      return;
+    }
+
+    setBoardSections((boardSection) => {
+      const activeItems = boardSection[activeContainer];
+      const overItems = boardSection[overContainer];
+
+      // Find the indexes for the items
+      const activeIndex = activeItems.findIndex(
+        (item) => item.id === active.id
+      );
+      const overIndex = overItems.findIndex((item) => item.id !== over?.id);
+
+      return {
+        ...boardSection,
+        [activeContainer]: [
+          ...boardSection[activeContainer].filter(
+            (item) => item.id !== active.id
+          ),
+        ],
+        [overContainer]: [
+          ...boardSection[overContainer].slice(0, overIndex),
+          boardSections[activeContainer][activeIndex],
+          ...boardSection[overContainer].slice(
+            overIndex,
+            boardSection[overContainer].length
+          ),
+        ],
+      };
+    });
+  };
+
+  const handleDragEnd = ({ active, over }: DragEndEvent) => {
+    const activeContainer = findSectionContainer(
+      boardSections,
+      active.id as string
+    );
+    const overContainer = findSectionContainer(
+      boardSections,
+      over?.id as string
+    );
+
+    if (
+      !activeContainer ||
+      !overContainer ||
+      activeContainer !== overContainer
+    ) {
+      return;
+    }
+
+    const activeIndex = boardSections[activeContainer].findIndex(
+      (task) => task.id === active.id
+    );
+    const overIndex = boardSections[overContainer].findIndex(
+      (task) => task.id === over?.id
+    );
+
+    if (activeIndex !== overIndex) {
+      setBoardSections((boardSection) => ({
+        ...boardSection,
+        [overContainer]: arrayMove(
+          boardSection[overContainer],
+          activeIndex,
+          overIndex
+        ),
+      }));
+    }
+
+    setActiveId(null);
+  };
+
+  const dropAnimation: DropAnimation = {
+    ...defaultDropAnimation,
+  };
+  const dragg = activeId ? getElementDraggId(draggItemContent, activeId) : null;
 
   const handleModalClick = () => {
     setOpen(!open);
-  };
-
-  const handleDragEnd = ({ over }: DragEndEvent) => {
-    setParent(over ? over.id : null);
   };
 
   return (
@@ -34,36 +151,27 @@ export default function AddPage() {
         option={open}
         setOpen={setOpen}
       />
-      <DndContext onDragEnd={handleDragEnd}>
-        <section className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <div className="flex justify-around items-center">
-            <div className="border-solid border-2 border-zinc-600 p-10 shadow flex justify-center flex-wrap">
-              {!parent &&
-                draggableItems.map((item) => (
-                  <ItemDraggable
-                    key={item.id}
-                    id={item.id}
-                    content={item.content.current}
-                  />
-                ))}
+
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+      >
+        <div>
+          {Object.keys(boardSections).map((boardSectionKey) => (
+            <div key={boardSectionKey}>
+              <BoardDroppableSection
+                id={boardSectionKey}
+                itemDragg={boardSections[boardSectionKey]}
+              />
             </div>
-            {parent === "drop" ? (
-              <Droppable id="drop">
-                {draggableItems.map((item) => (
-                  <ItemDraggable
-                    key={item.id}
-                    id={item.id}
-                    content={item.content.current}
-                  />
-                ))}
-              </Droppable>
-            ) : (
-              <Droppable id="drop">
-                <>Drop here</>
-              </Droppable>
-            )}
-          </div>
-        </section>
+          ))}
+          <DragOverlay dropAnimation={dropAnimation}>
+            {dragg ? <ItemDraggable dragg={dragg} /> : null}
+          </DragOverlay>
+        </div>
       </DndContext>
     </>
   );
