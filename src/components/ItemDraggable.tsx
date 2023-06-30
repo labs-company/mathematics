@@ -1,15 +1,13 @@
-import { Draggable } from "./Draggable";
-type ItemDraggableProps = {
-  id: string;
-  content: string;
+import { ElementDragg } from "../utils/types";
+
+type ElementDraggItem = {
+  dragg: ElementDragg;
 };
-export function ItemDraggable({ id, content }: ItemDraggableProps) {
+
+export const ItemDraggable = ({ dragg }: ElementDraggItem) => {
   return (
-    <Draggable id={id}>
-      <img
-        src={content}
-        className="inline-block h-16 w-16 rounded-full ring-2 ring-white"
-      />
-    </Draggable>
+    <div>
+      <img src={dragg.content} alt={dragg.id} />
+    </div>
   );
-}
+};
