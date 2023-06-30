@@ -159,7 +159,7 @@ export default function AddPage() {
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
       >
-        <div>
+        <div className="flex justify-center gap-10 items-center">
           {Object.keys(boardSections).map((boardSectionKey) => (
             <div key={boardSectionKey}>
               <BoardDroppableSection

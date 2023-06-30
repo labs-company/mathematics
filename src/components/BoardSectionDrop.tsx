@@ -20,15 +20,15 @@ export const BoardDroppableSection = ({
     id,
   });
   return (
-    <div className="bg-black">
+    <>
       <SortableContext
         id={id}
         items={itemDragg}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={setNodeRef} className="shadow">
+        <div ref={setNodeRef} className="p-10">
           {itemDragg.map((dragItem) => (
-            <div key={dragItem.id} className="bg-white">
+            <div key={dragItem.id} className="bg-black p-4 rounded m-1">
               <SortableItem id={dragItem.id}>
                 <ItemDraggable dragg={dragItem} />
               </SortableItem>
@@ -36,6 +36,6 @@ export const BoardDroppableSection = ({
           ))}
         </div>
       </SortableContext>
-    </div>
+    </>
   );
 };
