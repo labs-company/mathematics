@@ -3,6 +3,7 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
+import { Box } from "@mui/material";
 import { ElementDragg } from "../utils/types";
 import { ItemDraggable } from "./ItemDraggable";
 import { SortableItem } from "./SortableItem";
@@ -20,22 +21,22 @@ export const BoardDroppableSection = ({
     id,
   });
   return (
-    <>
+    <Box sx={{ backgroundColor: "#eee", padding: 2 }}>
       <SortableContext
         id={id}
         items={itemDragg}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={setNodeRef} className="p-10">
+        <div ref={setNodeRef}>
           {itemDragg.map((dragItem) => (
-            <div key={dragItem.id} className="bg-black p-4 rounded m-1">
+            <Box key={dragItem.id}>
               <SortableItem id={dragItem.id}>
                 <ItemDraggable dragg={dragItem} />
               </SortableItem>
-            </div>
+            </Box>
           ))}
         </div>
       </SortableContext>
-    </>
+    </Box>
   );
 };

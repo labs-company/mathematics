@@ -1,3 +1,4 @@
+import { Card, CardContent } from "@mui/material";
 import { ElementDragg } from "../utils/types";
 
 type ElementDraggItem = {
@@ -6,12 +7,14 @@ type ElementDraggItem = {
 
 export const ItemDraggable = ({ dragg }: ElementDraggItem) => {
   return (
-    <>
-      <img
-        src={dragg.content}
-        alt={dragg.id}
-        className="inline-block h-16 w-16 rounded-full ring-2 ring-white"
-      />
-    </>
+    <Card>
+      <CardContent>
+        <img
+          src={dragg.content}
+          alt={dragg.id}
+          className="inline-block h-16 w-16 rounded-full ring-2 ring-white"
+        />
+      </CardContent>
+    </Card>
   );
 };

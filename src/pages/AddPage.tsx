@@ -3,6 +3,8 @@ import { Banner } from "../components/Banner";
 import { Navbar } from "../components/Navbar";
 import { Modal } from "../components/Modal";
 import suma from "../assets/data/add";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
 import {
   useSensor,
   useSensors,
@@ -144,35 +146,37 @@ export default function AddPage() {
   return (
     <>
       <Navbar />
-      <Banner title="Suma" handleModalClick={handleModalClick} />
-      <Modal
-        title={suma.title}
-        description={suma.description}
-        option={open}
-        setOpen={setOpen}
-      />
+      <Container>
+        <Banner title="Suma" handleModalClick={handleModalClick} />
+        <Modal
+          title={suma.title}
+          description={suma.description}
+          option={open}
+          setOpen={setOpen}
+        />
 
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCorners}
-        onDragStart={handleDragStart}
-        onDragOver={handleDragOver}
-        onDragEnd={handleDragEnd}
-      >
-        <div className="flex justify-center gap-10 items-center">
-          {Object.keys(boardSections).map((boardSectionKey) => (
-            <div key={boardSectionKey}>
-              <BoardDroppableSection
-                id={boardSectionKey}
-                itemDragg={boardSections[boardSectionKey]}
-              />
-            </div>
-          ))}
-          <DragOverlay dropAnimation={dropAnimation}>
-            {dragg ? <ItemDraggable dragg={dragg} /> : null}
-          </DragOverlay>
-        </div>
-      </DndContext>
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCorners}
+          onDragStart={handleDragStart}
+          onDragOver={handleDragOver}
+          onDragEnd={handleDragEnd}
+        >
+          <Grid container spacing={4}>
+            {Object.keys(boardSections).map((boardSectionKey) => (
+              <Grid item xs={4} key={boardSectionKey}>
+                <BoardDroppableSection
+                  id={boardSectionKey}
+                  itemDragg={boardSections[boardSectionKey]}
+                />
+              </Grid>
+            ))}
+            <DragOverlay dropAnimation={dropAnimation}>
+              {dragg ? <ItemDraggable dragg={dragg} /> : null}
+            </DragOverlay>
+          </Grid>
+        </DndContext>
+      </Container>
     </>
   );
 }
