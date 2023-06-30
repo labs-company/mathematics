@@ -12,7 +12,7 @@ export const INITIAL_DRAGG: ElementDragg[] = [
   {
     id: uuidv4(),
     content: basketball,
-    status: "backlog",
+    status: "done",
   },
   {
     id: uuidv4(),
