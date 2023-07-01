@@ -10,13 +10,10 @@ import { SortableItem } from "./SortableItem";
 
 type BoardDroppableProp = {
   id: string;
-  itemDragg: ElementDragg[];
+  itemsDragg: ElementDragg[];
 };
 
-export const BoardDroppableSection = ({
-  id,
-  itemDragg,
-}: BoardDroppableProp) => {
+export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
   const { setNodeRef } = useDroppable({
     id,
   });
@@ -24,12 +21,12 @@ export const BoardDroppableSection = ({
     <Box sx={{ backgroundColor: "#eee", padding: 2 }}>
       <SortableContext
         id={id}
-        items={itemDragg}
+        items={itemsDragg}
         strategy={verticalListSortingStrategy}
       >
         <div ref={setNodeRef}>
-          {itemDragg.map((dragItem) => (
-            <Box key={dragItem.id}>
+          {itemsDragg.map((dragItem) => (
+            <Box key={dragItem.id} sx={{ mb: 2 }}>
               <SortableItem id={dragItem.id}>
                 <ItemDraggable dragg={dragItem} />
               </SortableItem>
@@ -39,4 +36,4 @@ export const BoardDroppableSection = ({
       </SortableContext>
     </Box>
   );
-};
+}

@@ -63,6 +63,7 @@ export default function AddPage() {
       !overContainer ||
       activeContainer === overContainer
     ) {
+      console.log("se cumplio la condicion");
       return;
     }
 
@@ -167,7 +168,7 @@ export default function AddPage() {
               <Grid item xs={4} key={boardSectionKey}>
                 <BoardDroppableSection
                   id={boardSectionKey}
-                  itemDragg={boardSections[boardSectionKey]}
+                  itemsDragg={boardSections[boardSectionKey]}
                 />
               </Grid>
             ))}
