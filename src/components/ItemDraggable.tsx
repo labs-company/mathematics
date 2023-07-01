@@ -5,7 +5,7 @@ type ElementDraggItem = {
   dragg: ElementDragg;
 };
 
-export const ItemDraggable = ({ dragg }: ElementDraggItem) => {
+export function ItemDraggable({ dragg }: ElementDraggItem) {
   return (
     <Card>
       <CardContent>
@@ -17,4 +17,4 @@ export const ItemDraggable = ({ dragg }: ElementDraggItem) => {
       </CardContent>
     </Card>
   );
-};
+}
