@@ -19,7 +19,7 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
   });
   return (
     <Box
-      sx={{ backgroundColor: "#eee", padding: 2, height: "20rem" }}
+      sx={{ backgroundColor: "#eee", padding: 2, height: "max-content" }}
       className="shadow"
     >
       <SortableContext
@@ -27,7 +27,7 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
         items={itemsDragg}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={setNodeRef}>
+        <div ref={setNodeRef} className="flex justify-center flex-wrap">
           {itemsDragg.map((dragItem) => (
             <Box
               key={dragItem.id}
@@ -37,7 +37,7 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
                 marginRight: 2,
               }}
             >
-              <SortableItem id={dragItem.id}>
+              <SortableItem id={dragItem.id || null}>
                 <ItemDraggable dragg={dragItem} />
               </SortableItem>
             </Box>

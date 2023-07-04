@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@mui/material";
+import { Card } from "@mui/material";
 import { ElementDragg } from "../utils/types";
 
 type ElementDraggItem = {
@@ -7,14 +7,12 @@ type ElementDraggItem = {
 
 export function ItemDraggable({ dragg }: ElementDraggItem) {
   return (
-    <Card className="cursor-grab">
-      <CardContent>
-        <img
-          src={dragg.content}
-          alt={dragg.id}
-          className="inline-block h-16 w-16 rounded-full ring-2 ring-white"
-        />
-      </CardContent>
+    <Card className="cursor-grab p-2">
+      <img
+        src={dragg.content}
+        alt={dragg.id}
+        className="inline-block h-16 w-16 rounded-full ring-2 ring-white"
+      />
     </Card>
   );
 }

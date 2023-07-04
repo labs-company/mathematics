@@ -1,13 +1,15 @@
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import RoutesApplication from "./routes/routes";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 function App() {
   return (
     <>
       <Navbar />
-
-      <RoutesApplication />
+      <ErrorBoundary>
+        <RoutesApplication />
+      </ErrorBoundary>
       <Footer />
     </>
   );

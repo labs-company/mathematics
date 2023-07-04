@@ -62,7 +62,6 @@ export default function AddPage() {
       !overContainer ||
       activeContainer === overContainer
     ) {
-      console.log("se cumplio la condicion");
       return;
     }
 
@@ -166,6 +165,7 @@ export default function AddPage() {
             display="flex"
             justifyContent="center"
             alignItems="center"
+            flexWrap="wrap"
             height="83.3vh"
           >
             {Object.keys(boardSections).map((boardSectionKey) => (
