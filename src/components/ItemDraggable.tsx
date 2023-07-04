@@ -7,7 +7,7 @@ type ElementDraggItem = {
 
 export function ItemDraggable({ dragg }: ElementDraggItem) {
   return (
-    <Card>
+    <Card className="cursor-grab">
       <CardContent>
         <img
           src={dragg.content}
