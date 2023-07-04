@@ -26,7 +26,15 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
       >
         <div ref={setNodeRef}>
           {itemsDragg.map((dragItem) => (
-            <Box key={dragItem.id} sx={{ mb: 2 }}>
+            <Box
+              key={dragItem.id}
+              sx={{
+                mb: 2,
+                display: "inline-block",
+                marginRight: 2,
+                cursor: "grab",
+              }}
+            >
               <SortableItem id={dragItem.id}>
                 <ItemDraggable dragg={dragItem} />
               </SortableItem>

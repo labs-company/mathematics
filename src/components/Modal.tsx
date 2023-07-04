@@ -12,7 +12,7 @@ type ModalType = {
 export function Modal(props: ModalType) {
   const cancelButtonRef = useRef(null);
   return (
-    <Transition.Root show={props.option} className="absolute top-20">
+    <Transition.Root show={props.option} className="absolute top-0">
       <Dialog
         as="div"
         className="relative z-10"
@@ -30,7 +30,7 @@ export function Modal(props: ModalType) {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
         </Transition.Child>
 
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-60 left-0 right-0">
           <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               enter="ease-out duration-300"

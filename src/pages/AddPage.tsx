@@ -3,7 +3,7 @@ import { Banner } from "../components/Banner";
 import { Modal } from "../components/Modal";
 import suma from "../assets/data/add";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Unstable_Grid2";
 import {
   useSensor,
   useSensors,
@@ -145,15 +145,14 @@ export default function AddPage() {
 
   return (
     <>
+      <Banner title="Suma" handleModalClick={handleModalClick} />
+      <Modal
+        title={suma.title}
+        description={suma.description}
+        option={open}
+        setOpen={setOpen}
+      />
       <Container>
-        <Banner title="Suma" handleModalClick={handleModalClick} />
-        <Modal
-          title={suma.title}
-          description={suma.description}
-          option={open}
-          setOpen={setOpen}
-        />
-
         <DndContext
           sensors={sensors}
           collisionDetection={closestCorners}
@@ -161,9 +160,16 @@ export default function AddPage() {
           onDragOver={handleDragOver}
           onDragEnd={handleDragEnd}
         >
-          <Grid container spacing={4}>
+          <Grid
+            container
+            spacing={8}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="83.3vh"
+          >
             {Object.keys(boardSections).map((boardSectionKey) => (
-              <Grid item xs={4} key={boardSectionKey}>
+              <Grid key={boardSectionKey}>
                 <BoardDroppableSection
                   id={boardSectionKey}
                   itemsDragg={boardSections[boardSectionKey]}
