@@ -169,7 +169,7 @@ export default function AddPage() {
             height="83.3vh"
           >
             {Object.keys(boardSections).map((boardSectionKey) => (
-              <Grid key={boardSectionKey}>
+              <Grid key={boardSectionKey} xs={6}>
                 <BoardDroppableSection
                   id={boardSectionKey}
                   itemsDragg={boardSections[boardSectionKey]}
