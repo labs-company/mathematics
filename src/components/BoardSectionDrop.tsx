@@ -18,7 +18,10 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
     id,
   });
   return (
-    <Box sx={{ backgroundColor: "#eee", padding: 2 }}>
+    <Box
+      sx={{ backgroundColor: "#eee", padding: 2, height: "20rem" }}
+      className="shadow"
+    >
       <SortableContext
         id={id}
         items={itemsDragg}
@@ -32,7 +35,6 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
                 mb: 2,
                 display: "inline-block",
                 marginRight: 2,
-                cursor: "grab",
               }}
             >
               <SortableItem id={dragItem.id}>
