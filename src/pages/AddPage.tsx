@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Banner } from "../components/Banner";
-import { Navbar } from "../components/Navbar";
 import { Modal } from "../components/Modal";
 import suma from "../assets/data/add";
 import Container from "@mui/material/Container";
@@ -146,7 +145,6 @@ export default function AddPage() {
 
   return (
     <>
-      <Navbar />
       <Container>
         <Banner title="Suma" handleModalClick={handleModalClick} />
         <Modal

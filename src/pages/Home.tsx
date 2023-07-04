@@ -1,12 +1,9 @@
-import { Navbar } from "../components/Navbar";
 import fondo from "../assets/fondo.png";
 import confetti from "canvas-confetti";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
-
       <section
         className="flex justify-between items-end"
         style={{ height: "calc(100vh - 100px)", overflow: "hidden" }}
