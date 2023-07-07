@@ -25,6 +25,7 @@ import { getElementDraggId } from "../utils/elementDragg";
 import { findSectionContainer, initilizeBoardDrop } from "../utils/board";
 import { BoardDroppableSection } from "../components/BoardSectionDrop";
 import { ItemDraggable } from "../components/ItemDraggable";
+import { Link } from "react-router-dom";
 
 export default function AddPage() {
   const [open, setOpen] = useState(false);
@@ -144,7 +145,7 @@ export default function AddPage() {
 
   return (
     <>
-      <Banner title="Suma" handleModalClick={handleModalClick} />
+      <Banner title="Suma - Nivel 1" handleModalClick={handleModalClick} />
       <Modal
         title={suma.title}
         description={suma.description}
@@ -181,6 +182,7 @@ export default function AddPage() {
             </DragOverlay>
           </Grid>
         </DndContext>
+        <Link to="/level-add/leveltwo">Siguiente Nivel</Link>
       </Container>
     </>
   );
