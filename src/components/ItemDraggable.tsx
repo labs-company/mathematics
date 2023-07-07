@@ -7,7 +7,10 @@ type ElementDraggItem = {
 
 export function ItemDraggable({ dragg }: ElementDraggItem) {
   return (
-    <Card className="cursor-grab p-2">
+    <Card
+      className="cursor-grab p-2"
+      sx={{ backgroundColor: "transparent", boxShadow: "none" }}
+    >
       <img
         src={dragg.content}
         alt={dragg.id}
