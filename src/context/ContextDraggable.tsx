@@ -1,4 +1,4 @@
-import {createContext, useState} from 'react'
+import { createContext, useState} from 'react'
 
 
 type ContextGlobals = {
@@ -12,10 +12,13 @@ type ContextProps = {
 
 const Context = createContext<ContextGlobals | null>(null)
 
-export default function ContextDraggable({children}: ContextProps) {
+ function ContextDraggable({children}: ContextProps) {
+
     const [open, setOpen] = useState(false);
 
     return  <Context.Provider value={{open, setOpen}}>
         {children}
     </Context.Provider>
 }
+
+export {ContextDraggable, Context}
