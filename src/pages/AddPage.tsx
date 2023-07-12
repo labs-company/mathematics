@@ -182,7 +182,10 @@ export default function AddPage() {
             </DragOverlay>
           </Grid>
         </DndContext>
-        <Link to="/level-add/leveltwo">Siguiente Nivel</Link>
+        <div className="flex justify-end p-2">
+        <Link to="/level-add/leveltwo" className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition">Siguiente Nivel</Link>
+
+        </div>
       </Container>
     </>
   );
