@@ -5,20 +5,13 @@ import suma from "../assets/data/add";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Unstable_Grid2";
 import {
-  useSensor,
-  useSensors,
-  PointerSensor,
-  KeyboardSensor,
   DndContext,
   closestCorners,
   DragEndEvent,
-  DragStartEvent,
   DragOverEvent,
   DragOverlay,
-  DropAnimation,
-  defaultDropAnimation,
 } from "@dnd-kit/core";
-import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
+import { arrayMove } from "@dnd-kit/sortable";
 import { INITIAL_DRAGG } from "../assets/data/add_dragg";
 import { BoardSections as BoardSectionsType } from "../utils/types";
 import { getElementDraggId } from "../utils/elementDragg";
@@ -26,26 +19,24 @@ import { findSectionContainer, initilizeBoardDrop } from "../utils/board";
 import { BoardDroppableSection } from "../components/BoardSectionDrop";
 import { ItemDraggable } from "../components/ItemDraggable";
 import { Link } from "react-router-dom";
+import { useDraggableContext } from "../hooks/useDraggable";
 
 export default function AddPage() {
-  const [open, setOpen] = useState(false);
+  const {
+    open,
+    setOpen,
+    activeId,
+    setActivedId,
+    sensors,
+    handleDragStart,
+    handleModalClick,
+    dropAnimation,
+  } = useDraggableContext();
+
   const draggItemContent = INITIAL_DRAGG;
-  const initialBoard = initilizeBoardDrop(INITIAL_DRAGG);
+  const initialBoard = initilizeBoardDrop(draggItemContent);
   const [boardSections, setBoardSections] =
     useState<BoardSectionsType>(initialBoard);
-
-  const [activeId, setActiveId] = useState<string | null>(null);
-
-  const sensors = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    })
-  );
-
-  const handleDragStart = ({ active }: DragStartEvent) => {
-    setActiveId(active.id as string);
-  };
 
   const handleDragOver = ({ active, over }: DragOverEvent) => {
     // Find the containers
@@ -114,10 +105,10 @@ export default function AddPage() {
     }
 
     const activeIndex = boardSections[activeContainer].findIndex(
-      (task) => task.id === active.id
+      (item) => item.id === active.id
     );
     const overIndex = boardSections[overContainer].findIndex(
-      (task) => task.id === over?.id
+      (item) => item.id === over?.id
     );
 
     if (activeIndex !== overIndex) {
@@ -131,17 +122,10 @@ export default function AddPage() {
       }));
     }
 
-    setActiveId(null);
+    setActivedId(null);
   };
 
-  const dropAnimation: DropAnimation = {
-    ...defaultDropAnimation,
-  };
   const dragg = activeId ? getElementDraggId(draggItemContent, activeId) : null;
-
-  const handleModalClick = () => {
-    setOpen(!open);
-  };
 
   return (
     <>
@@ -183,8 +167,12 @@ export default function AddPage() {
           </Grid>
         </DndContext>
         <div className="flex justify-end p-2">
-        <Link to="/level-add/leveltwo" className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition">Siguiente Nivel</Link>
-
+          <Link
+            to="/level-add/leveltwo"
+            className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
+          >
+            Siguiente Nivel
+          </Link>
         </div>
       </Container>
     </>
