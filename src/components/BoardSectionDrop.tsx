@@ -23,8 +23,6 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
         backgroundColor: "#eee",
         padding: 2,
         height: "max-content",
-        borderWidth: "0.5px",
-        borderColor: "#000",
         borderRadius: "20px",
       }}
       className="shadow"
