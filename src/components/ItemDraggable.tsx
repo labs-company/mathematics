@@ -14,7 +14,7 @@ export function ItemDraggable({ dragg }: ElementDraggItem) {
       <img
         src={dragg.content}
         alt={dragg.id}
-        className="inline-block h-16 w-16 rounded-full ring-2 ring-white"
+        className="inline-block h-16 w-16"
       />
     </Card>
   );
