@@ -12,16 +12,15 @@ import { Modal } from "../../components/Modal";
 import { useDraggableContext } from "../../hooks/useDraggable";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { INITIAL_DRAGG_LVL_TWO } from "../../assets/data/add_dragg";
+import { INITIAL_DRAGG_LVL_THREE } from "../../assets/data/add_dragg";
 import { findSectionContainer, initilizeBoardDrop } from "../../utils/board";
 import { useState } from "react";
 import { arrayMove } from "@dnd-kit/sortable";
 import { getElementDraggId } from "../../utils/elementDragg";
 import { BoardDroppableSection } from "../../components/BoardSectionDrop";
 import { ItemDraggable } from "../../components/ItemDraggable";
-import { Link } from "react-router-dom";
 
-export default function LevelTwoAdd() {
+export default function LevelThreeAdd() {
   const {
     handleModalClick,
     open,
@@ -33,7 +32,7 @@ export default function LevelTwoAdd() {
     dropAnimation,
   } = useDraggableContext();
 
-  const draggableItemContent = INITIAL_DRAGG_LVL_TWO;
+  const draggableItemContent = INITIAL_DRAGG_LVL_THREE;
   const initialBoard = initilizeBoardDrop(draggableItemContent);
   const [boardSections, setBoardSections] =
     useState<BoardSectionsType>(initialBoard);
@@ -130,7 +129,7 @@ export default function LevelTwoAdd() {
     : null;
   return (
     <>
-      <Banner title="Suma - Level 2" handleModalClick={handleModalClick} />
+      <Banner title="Suma - Level 3" handleModalClick={handleModalClick} />
       <Modal
         title={suma.title}
         description={suma.description}
@@ -167,14 +166,6 @@ export default function LevelTwoAdd() {
             </DragOverlay>
           </Grid>
         </DndContext>
-        <div className="flex justify-end p-2">
-          <Link
-            to="/level-add/levelthree"
-            className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
-          >
-            Siguiente Nivel
-          </Link>
-        </div>
       </Container>
     </>
   );
