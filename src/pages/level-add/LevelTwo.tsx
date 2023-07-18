@@ -21,7 +21,7 @@ import { BoardDroppableSection } from "../../components/BoardSectionDrop";
 import { ItemDraggable } from "../../components/ItemDraggable";
 import { Link } from "react-router-dom";
 
-export function LevelTwoAdd() {
+export default function LevelTwoAdd() {
   const {
     handleModalClick,
     open,
