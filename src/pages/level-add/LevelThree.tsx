@@ -19,6 +19,7 @@ import { arrayMove } from "@dnd-kit/sortable";
 import { getElementDraggId } from "../../utils/elementDragg";
 import { BoardDroppableSection } from "../../components/BoardSectionDrop";
 import { ItemDraggable } from "../../components/ItemDraggable";
+import { Link } from "react-router-dom";
 
 export default function LevelThreeAdd() {
   const {
@@ -165,6 +166,14 @@ export default function LevelThreeAdd() {
               {dragg ? <ItemDraggable dragg={dragg} /> : null}
             </DragOverlay>
           </Grid>
+          <div className="flex justify-end p-2">
+            <Link
+              to="/"
+              className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
+            >
+              Volver al inicio
+            </Link>
+          </div>
         </DndContext>
       </Container>
     </>
