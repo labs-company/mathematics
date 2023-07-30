@@ -7,6 +7,7 @@ import SplitPage from "../pages/SplitPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import LevelTwoAdd from "../pages/level-add/LevelTwo";
 import LevelThreeAdd from "../pages/level-add/LevelThree";
+import LevelTwoSubtract from "../pages/level-subtract/LevelTwo";
 
 export default function RoutesApplication() {
   return (
@@ -18,6 +19,7 @@ export default function RoutesApplication() {
       <Route path="/split" element={<SplitPage />} />
       <Route path="/level-add/leveltwo" element={<LevelTwoAdd />} />
       <Route path="/level-add/levelthree" element={<LevelThreeAdd />} />
+      <Route path="/level-subtract/leveltwo" element={<LevelTwoSubtract/>}/>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
