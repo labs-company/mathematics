@@ -8,6 +8,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 import LevelTwoAdd from "../pages/level-add/LevelTwo";
 import LevelThreeAdd from "../pages/level-add/LevelThree";
 import LevelTwoSubtract from "../pages/level-subtract/LevelTwo";
+import LevelThreeSubtract from "../pages/level-subtract/LevelThree";
 
 export default function RoutesApplication() {
   return (
@@ -20,6 +21,7 @@ export default function RoutesApplication() {
       <Route path="/level-add/leveltwo" element={<LevelTwoAdd />} />
       <Route path="/level-add/levelthree" element={<LevelThreeAdd />} />
       <Route path="/level-subtract/leveltwo" element={<LevelTwoSubtract/>}/>
+      <Route path="/level-subtract/levelthree" element={<LevelThreeSubtract/>}/>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
