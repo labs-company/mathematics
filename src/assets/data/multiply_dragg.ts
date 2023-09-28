@@ -72,7 +72,7 @@ export const INITIAL_DRAGG_MULTIPLY: ElementDragg[] = [
         status: "done",
     },
 ];
-export const INITIAL_DRAGG_SUBTRACT_LEVEL_TWO: ElementDragg[] = [
+export const INITIAL_DRAGG_MULTIPLY_LEVEL_TWO: ElementDragg[] = [
     {
         id: uuidv4(),
         content: magic,
@@ -141,7 +141,7 @@ export const INITIAL_DRAGG_SUBTRACT_LEVEL_TWO: ElementDragg[] = [
     },
 
 ] 
-export const INITIAL_DRAGG_SUBTRACT_LEVEL_THREE: ElementDragg[] = [
+export const INITIAL_DRAGG_MULTIPLY_LEVEL_THREE: ElementDragg[] = [
     {
         id: uuidv4(),
         content: sugar,
