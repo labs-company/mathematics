@@ -11,7 +11,7 @@ import { Banner } from "../../components/Banner";
 import { Modal } from "../../components/Modal";
 import { useDraggableContext } from "../../hooks/useDraggable";
 import { Container } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import Grid from "@mui/material/Unstable_Grid2";
 import { INITIAL_DRAGG_SUBTRACT_LEVEL_TWO } from "../../assets/data/subtract_dragg";
 import { findSectionContainer, initilizeBoardDrop } from "../../utils/board";
 import { useState } from "react";
@@ -152,8 +152,8 @@ export default function LevelTwoSubtract() {
             justifyContent="center"
             alignItems="center"
             flexWrap="wrap"
-            height="83.3vh"
-          >
+            height="83.3vh">
+            
             {Object.keys(boardSections).map((boardSectionKey) => (
               <Grid key={boardSectionKey} xs={6}>
                 <BoardDroppableSection
