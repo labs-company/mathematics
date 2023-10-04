@@ -129,7 +129,7 @@ export default function SplitPage() {
 
   return (
     <>
-      <Banner title="Division - Nivel 1" handleModalClick={handleModalClick} />
+      <Banner title="Division - Nivel 1" handleModalClick={handleModalClick} icon="/" />
       <Modal
         title={split.title}
         description={split.description}

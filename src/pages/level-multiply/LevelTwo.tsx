@@ -130,7 +130,7 @@ export default function LevelTwoMultiply() {
         : null;
     return (
         <>
-            <Banner title="Suma - Level 2" handleModalClick={handleModalClick} />
+            <Banner title="Suma - Level 2" handleModalClick={handleModalClick} icon="*"/>
             <Modal
                 title={suma.title}
                 description={suma.description}

@@ -129,7 +129,7 @@ export default function SubtractPage() {
 
   return (
     <>
-      <Banner title="Resta - Nivel 1" handleModalClick={handleModalClick} />
+      <Banner title="Resta - Nivel 1" handleModalClick={handleModalClick} icon="-"/>
       <Modal
         title={subtract.title}
         description={subtract.description}

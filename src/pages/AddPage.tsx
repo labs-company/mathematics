@@ -129,7 +129,7 @@ export default function AddPage() {
 
   return (
     <>
-      <Banner title="Suma - Nivel 1" handleModalClick={handleModalClick} />
+      <Banner title="Suma - Nivel 1" handleModalClick={handleModalClick} icon="+"/>
       <Modal
         title={suma.title}
         description={suma.description}

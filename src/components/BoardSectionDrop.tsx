@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 import { ElementDragg } from "../utils/types";
 import { ItemDraggable } from "./ItemDraggable";
 import { SortableItem } from "./SortableItem";
+import { useState } from "react";
 
 type BoardDroppableProp = {
   id: string;
@@ -17,6 +18,21 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
   const { setNodeRef } = useDroppable({
     id,
   });
+
+  const [maxOfElement, setMaxOfElement] = useState(itemsDragg.length)
+
+  const isElderly = maxOfElement <= 3
+
+  console.log(maxOfElement);
+  
+    console.log(isElderly);
+    
+    const isReferenceElement = (el: HTMLDivElement) => {
+      setNodeRef(el)
+      if(el) {
+        setMaxOfElement(el.children.length)
+      }
+    }
   return (
     <Box
       sx={{
@@ -32,7 +48,7 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
         items={itemsDragg}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={setNodeRef} className="flex justify-center flex-wrap">
+        <div ref={isReferenceElement} className="flex justify-center flex-wrap">
           {itemsDragg.map((dragItem) => (
             <Box
               key={dragItem.id}
@@ -42,7 +58,7 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
                 marginRight: 2,
               }}
             >
-              <SortableItem id={dragItem.id || null}>
+              <SortableItem id={dragItem.id || null} disabled={isElderly}>
                 <ItemDraggable dragg={dragItem} />
               </SortableItem>
             </Box>
