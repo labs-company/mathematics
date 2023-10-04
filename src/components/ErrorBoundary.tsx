@@ -34,7 +34,7 @@ export function ErrorBoundary({ children }: ErrorBoundaryProps) {
             Hubo un error. Por favor, recarga la página
           </h1>
           <p className="mt-6 text-base leading-7 text-gray-600">
-            Porfavor vuelve al menu principal o consulta con @netteam para
+            Porfavor vuelve al menu principal o consulta con Labs Compnay para
             posibles errores
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
