@@ -8,3 +8,6 @@ Let's make arimetics as readable and easy for children. Drag And Drop completes 
 - Contributor
 - Guide
 - Installation
+
+
+## license
