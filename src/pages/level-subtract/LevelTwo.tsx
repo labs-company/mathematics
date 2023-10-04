@@ -130,7 +130,7 @@ export default function LevelTwoSubtract() {
     : null;
   return (
     <>
-      <Banner title="Resta - Level 2" handleModalClick={handleModalClick} />
+      <Banner title="Resta - Level 2" handleModalClick={handleModalClick} icon="-"/>
       <Modal
         title={subtract.title}
         description={subtract.description}

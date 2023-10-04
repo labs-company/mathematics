@@ -5,12 +5,12 @@ import { CSS } from "@dnd-kit/utilities";
 type SortableTaskItemProps = {
   children: React.ReactNode;
   id: string | null;
+  disabled: boolean
 };
 
-export const SortableItem = ({ children, id }: SortableTaskItemProps) => {
-  if (!id) {
-    return null;
-  }
+export const SortableItem = ({ children, id, disabled }: SortableTaskItemProps) => {
+  if (!id) return null;
+  
   const {
     attributes,
     listeners,
@@ -18,13 +18,13 @@ export const SortableItem = ({ children, id }: SortableTaskItemProps) => {
     transform,
     transition,
     isDragging,
-  } = useSortable({ id });
+  } = useSortable({ id, disabled });
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
     opacity: isDragging ? 0 : 1,
-  };
+  };  
 
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>

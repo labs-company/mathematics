@@ -129,7 +129,7 @@ export default function MultiplyPage() {
 
   return (
     <>
-      <Banner title="Multiplicacion - Nivel 1" handleModalClick={handleModalClick} />
+      <Banner title="Multiplicacion - Nivel 1" handleModalClick={handleModalClick} icon="*"/>
       <Modal
         title={multiply.title}
         description={multiply.description}

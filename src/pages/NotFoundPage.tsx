@@ -10,7 +10,7 @@ export default function NotFoundPage() {
             Pagina no encontrada
           </h1>
           <p className="mt-6 text-base leading-7 text-gray-600">
-            Porfavor vuelve al menu principal o consulta con @netteam para
+            Porfavor vuelve al menu principal o consulta con <b>Labs Company</b> para
             posibles errores
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -21,7 +21,7 @@ export default function NotFoundPage() {
               Go back home
             </Link>
             <a
-              href="github.com/netteam-novice"
+              href="github.com/labs-company"
               className="text-sm font-semibold text-gray-900"
             >
               Contact support <span aria-hidden="true">&rarr;</span>

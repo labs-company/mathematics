@@ -130,7 +130,7 @@ export default function LevelThreeAdd() {
     : null;
   return (
     <>
-      <Banner title="Suma - Level 3" handleModalClick={handleModalClick} />
+      <Banner title="Suma - Level 3" handleModalClick={handleModalClick} icon="+"/>
       <Modal
         title={suma.title}
         description={suma.description}
