@@ -1,7 +1,7 @@
-import { Footer } from "./components/Footer";
-import { Navbar } from "./components/Navbar";
-import RoutesApplication from "./routes/routes";
-import { ErrorBoundary } from "./components/ErrorBoundary";
+import { Footer } from './components/Footer'
+import { Navbar } from './components/Navbar'
+import RoutesApplication from './routes/routes'
+import { ErrorBoundary } from './components/ErrorBoundary'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       </ErrorBoundary>
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

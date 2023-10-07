@@ -4,22 +4,22 @@ import {
   DragOverEvent,
   DragOverlay,
   closestCorners,
-} from "@dnd-kit/core";
-import { BoardSections as BoardSectionsType } from "../../utils/types";
-import subtract from "../../assets/data/subtract";
-import { Banner } from "../../components/Banner";
-import { Modal } from "../../components/Modal";
-import { useDraggableContext } from "../../hooks/useDraggable";
-import { Container } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import { INITIAL_DRAGG_SUBTRACT_LEVEL_THREE } from "../../assets/data/subtract_dragg";
-import { findSectionContainer, initilizeBoardDrop } from "../../utils/board";
-import { useState } from "react";
-import { arrayMove } from "@dnd-kit/sortable";
-import { getElementDraggId } from "../../utils/elementDragg";
-import { BoardDroppableSection } from "../../components/BoardSectionDrop";
-import { ItemDraggable } from "../../components/ItemDraggable";
-import { Link } from "react-router-dom";
+} from '@dnd-kit/core'
+import { BoardSections as BoardSectionsType } from '../../utils/types'
+import subtract from '../../assets/data/subtract'
+import { Banner } from '../../components/Banner'
+import { Modal } from '../../components/Modal'
+import { useDraggableContext } from '../../hooks/useDraggable'
+import { Container } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
+import { INITIAL_DRAGG_SUBTRACT_LEVEL_THREE } from '../../assets/data/subtract_dragg'
+import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
+import { useState } from 'react'
+import { arrayMove } from '@dnd-kit/sortable'
+import { getElementDraggId } from '../../utils/elementDragg'
+import { BoardDroppableSection } from '../../components/BoardSectionDrop'
+import { ItemDraggable } from '../../components/ItemDraggable'
+import { Link } from 'react-router-dom'
 
 export default function LevelThreeSubtract() {
   const {
@@ -31,47 +31,45 @@ export default function LevelThreeSubtract() {
     activeId,
     setActivedId,
     dropAnimation,
-  } = useDraggableContext();
+  } = useDraggableContext()
 
-  const draggableItemContent = INITIAL_DRAGG_SUBTRACT_LEVEL_THREE;
-  const initialBoard = initilizeBoardDrop(draggableItemContent);
+  const draggableItemContent = INITIAL_DRAGG_SUBTRACT_LEVEL_THREE
+  const initialBoard = initilizeBoardDrop(draggableItemContent)
   const [boardSections, setBoardSections] =
-    useState<BoardSectionsType>(initialBoard);
+    useState<BoardSectionsType>(initialBoard)
 
   const handleDragOver = ({ active, over }: DragOverEvent) => {
     // Find the containers
     const activeContainer = findSectionContainer(
       boardSections,
-      active.id as string
-    );
+      active.id as string,
+    )
     const overContainer = findSectionContainer(
       boardSections,
-      over?.id as string
-    );
+      over?.id as string,
+    )
 
     if (
       !activeContainer ||
       !overContainer ||
       activeContainer === overContainer
     ) {
-      return;
+      return
     }
 
     setBoardSections((boardSection) => {
-      const activeItems = boardSection[activeContainer];
-      const overItems = boardSection[overContainer];
+      const activeItems = boardSection[activeContainer]
+      const overItems = boardSection[overContainer]
 
       // Find the indexes for the items
-      const activeIndex = activeItems.findIndex(
-        (item) => item.id === active.id
-      );
-      const overIndex = overItems.findIndex((item) => item.id !== over?.id);
+      const activeIndex = activeItems.findIndex((item) => item.id === active.id)
+      const overIndex = overItems.findIndex((item) => item.id !== over?.id)
 
       return {
         ...boardSection,
         [activeContainer]: [
           ...boardSection[activeContainer].filter(
-            (item) => item.id !== active.id
+            (item) => item.id !== active.id,
           ),
         ],
         [overContainer]: [
@@ -79,37 +77,37 @@ export default function LevelThreeSubtract() {
           boardSections[activeContainer][activeIndex],
           ...boardSection[overContainer].slice(
             overIndex,
-            boardSection[overContainer].length
+            boardSection[overContainer].length,
           ),
         ],
-      };
-    });
-  };
+      }
+    })
+  }
 
   const handleDragEnd = ({ active, over }: DragEndEvent) => {
     const activeContainer = findSectionContainer(
       boardSections,
-      active.id as string
-    );
+      active.id as string,
+    )
     const overContainer = findSectionContainer(
       boardSections,
-      over?.id as string
-    );
+      over?.id as string,
+    )
 
     if (
       !activeContainer ||
       !overContainer ||
       activeContainer !== overContainer
     ) {
-      return;
+      return
     }
 
     const activeIndex = boardSections[activeContainer].findIndex(
-      (item) => item.id === active.id
-    );
+      (item) => item.id === active.id,
+    )
     const overIndex = boardSections[overContainer].findIndex(
-      (item) => item.id === over?.id
-    );
+      (item) => item.id === over?.id,
+    )
 
     if (activeIndex !== overIndex) {
       setBoardSections((boardSection) => ({
@@ -117,20 +115,24 @@ export default function LevelThreeSubtract() {
         [overContainer]: arrayMove(
           boardSection[overContainer],
           activeIndex,
-          overIndex
+          overIndex,
         ),
-      }));
+      }))
     }
 
-    setActivedId(null);
-  };
+    setActivedId(null)
+  }
 
   const dragg = activeId
     ? getElementDraggId(draggableItemContent, activeId)
-    : null;
+    : null
   return (
     <>
-      <Banner title="Resta - Level 3" handleModalClick={handleModalClick} icon="-"/>
+      <Banner
+        title='Resta - Level 3'
+        handleModalClick={handleModalClick}
+        icon='-'
+      />
       <Modal
         title={subtract.title}
         description={subtract.description}
@@ -148,11 +150,11 @@ export default function LevelThreeSubtract() {
           <Grid
             container
             spacing={8}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            flexWrap="wrap"
-            height="83.3vh"
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            flexWrap='wrap'
+            height='83.3vh'
           >
             {Object.keys(boardSections).map((boardSectionKey) => (
               <Grid key={boardSectionKey} xs={6}>
@@ -166,10 +168,10 @@ export default function LevelThreeSubtract() {
               {dragg ? <ItemDraggable dragg={dragg} /> : null}
             </DragOverlay>
           </Grid>
-          <div className="flex justify-end p-2">
+          <div className='flex justify-end p-2'>
             <Link
-              to="/"
-              className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
+              to='/'
+              className='hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition'
             >
               Volver al inicio
             </Link>
@@ -177,5 +179,5 @@ export default function LevelThreeSubtract() {
         </DndContext>
       </Container>
     </>
-  );
+  )
 }
