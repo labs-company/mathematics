@@ -9,3 +9,8 @@ const config: Config = {
 }
 
 export default config
+
+/**
+ * LF (Line Feed): Usado principalmente en sistemas tipo Unix y Linux.
+ * CRLF (Carriage Return + Line Feed): Usado principalmente en sistemas Windows.
+ */
