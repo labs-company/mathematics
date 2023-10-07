@@ -1,9 +1,7 @@
-import { Config } from "tailwindcss";
+import { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    "./index.html", "./src/**/*.{js,ts,jsx,tsx}"
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
@@ -11,3 +9,8 @@ const config: Config = {
 }
 
 export default config
+
+/**
+ * LF (Line Feed): Usado principalmente en sistemas tipo Unix y Linux.
+ * CRLF (Carriage Return + Line Feed): Usado principalmente en sistemas Windows.
+ */
