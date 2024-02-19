@@ -39,7 +39,6 @@ export default function AddPage() {
     useState<BoardSectionsType>(initialBoard)
 
   const handleDragOver = ({ active, over }: DragOverEvent) => {
-    // Find the containers
     const activeContainer = findSectionContainer(
       boardSections,
       active.id as string,
@@ -61,7 +60,6 @@ export default function AddPage() {
       const activeItems = boardSection[activeContainer]
       const overItems = boardSection[overContainer]
 
-      // Find the indexes for the items
       const activeIndex = activeItems.findIndex((item) => item.id === active.id)
       const overIndex = overItems.findIndex((item) => item.id !== over?.id)
 

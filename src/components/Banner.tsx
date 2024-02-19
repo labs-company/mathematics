@@ -8,16 +8,33 @@ export function Banner(props: BannerType) {
     figureOne: '',
     figureTwo: '',
   })
+  const [operation, setOperation] = useState<number | null>(null)
 
   const handleChangeFigure = (key: string, value: string) => {
     setIsFigure({ ...isFigure, [key]: value })
+    setOperation(null)
   }
 
   const isValidated = () => {
     if (!isFigure.figureOne && !isFigure.figureTwo) return
-    const result = parseInt(isFigure.figureOne) + parseInt(isFigure.figureTwo)
+    let result: number | null = null
 
-    console.log(result)
+    if (props.icon === '*') {
+      result = parseInt(isFigure.figureOne) * parseInt(isFigure.figureTwo)
+    }
+
+    if (props.icon === '-') {
+      result = parseInt(isFigure.figureOne) - parseInt(isFigure.figureTwo)
+    }
+
+    if (props.icon === '+') {
+      result = parseInt(isFigure.figureOne) + parseInt(isFigure.figureTwo)
+    }
+    if (props.icon === '/') {
+      result = parseInt(isFigure.figureOne) / parseInt(isFigure.figureTwo)
+    }
+
+    setOperation(result)
   }
   return (
     <aside className='bg-white shadow px-4 py-4 sm:px-6 lg:px-8'>
@@ -53,13 +70,13 @@ export function Banner(props: BannerType) {
           maxLength={2}
           onChange={(e) => handleChangeFigure('figureTwo', e.target.value)}
         />
-        <a
-          href='#'
+        <span className='font-bold text-xl'>=</span>
+        <button
           className='px-2 py-1 bg-zinc-400 shadow-md rounded text-white hover:bg-zinc-600 hover:transition-colors'
           onClick={isValidated}
         >
-          Calcular
-        </a>
+          {!operation ? 'Calcular' : operation}
+        </button>
       </div>
     </aside>
   )
