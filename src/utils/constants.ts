@@ -1,14 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 import type { ElementDragg } from '../utils/types'
 
-import basketball from '/airplane-svgrepo-com.svg'
-import magic from '/magic-svgrepo-com.svg'
-import sugar from '/sugar-svgrepo-com.svg'
-import heart from '/heart-svgrepo-com.svg'
-import book from '/book-closed-svgrepo-com.svg'
-import branch from '/branch-svgrepo-com.png'
-import cactus from '/potted-cactus-svgrepo-com.png'
-
 export const BOARD_SECTIONS = {
   backlog: 'backlog',
   done: 'done',
@@ -98,68 +90,68 @@ export const CONCEPTS = {
 export const INITIAL_DRAGG: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
 ]
@@ -167,73 +159,73 @@ export const INITIAL_DRAGG: ElementDragg[] = [
 export const INITIAL_DRAGG_LVL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: heart,
+    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
 ]
@@ -241,63 +233,63 @@ export const INITIAL_DRAGG_LVL_TWO: ElementDragg[] = [
 export const INITIAL_DRAGG_LVL_THREE: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: book,
+    content: '/book-closed-svgrepo-com.svg',
     status: 'done',
   },
 ]
@@ -305,204 +297,204 @@ export const INITIAL_DRAGG_LVL_THREE: ElementDragg[] = [
 export const INITIAL_DRAGG_SUBTRACT: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: basketball,
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
 ]
 export const INITIAL_DRAGG_SUBTRACT_LEVEL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
 ]
 export const INITIAL_DRAGG_SUBTRACT_LEVEL_THREE: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
 ]
@@ -510,204 +502,204 @@ export const INITIAL_DRAGG_SUBTRACT_LEVEL_THREE: ElementDragg[] = [
 export const INITIAL_DRAGG_MULTIPLY: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: branch,
+    content: '/branch-svgrepo-com.png',
     status: 'done',
   },
 ]
 export const INITIAL_DRAGG_MULTIPLY_LEVEL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
 ]
 export const INITIAL_DRAGG_MULTIPLY_LEVEL_THREE: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
 ]
@@ -715,204 +707,204 @@ export const INITIAL_DRAGG_MULTIPLY_LEVEL_THREE: ElementDragg[] = [
 export const INITIAL_DRAGG_SPLIT: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: cactus,
+    content: '/potted-cactus-svgrepo-com.png',
     status: 'done',
   },
 ]
 export const INITIAL_DRAGG_SPLIT_LEVEL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: magic,
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
 ]
 export const INITIAL_DRAGG_SPLIT_LEVEL_THREE: ElementDragg[] = [
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
 
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
   {
     id: uuidv4(),
-    content: sugar,
+    content: '/sugar-svgrepo-com.svg',
     status: 'done',
   },
 ]
