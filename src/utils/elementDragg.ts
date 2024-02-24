@@ -1,9 +1,9 @@
-import { ElementDragg, Status } from './types'
+import type { ElementDragg, Status } from './types'
 
-export const getStatusElementDragg = (
-  elementDraggs: ElementDragg[],
-  status: Status,
-) => elementDraggs.filter((elementDrag) => elementDrag.status === status)
+export function getStatusElementDragg(elementDraggs: ElementDragg[], status: Status) {
+  return elementDraggs.filter(elementDrag => elementDrag.status === status)
+}
 
-export const getElementDraggId = (elementDraggs: ElementDragg[], id: string) =>
-  elementDraggs.find((elementDragg) => elementDragg.id === id)
+export function getElementDraggId(elementDraggs: ElementDragg[], id: string) {
+  return elementDraggs.find(elementDragg => elementDragg.id === id)
+}

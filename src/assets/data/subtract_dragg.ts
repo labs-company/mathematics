@@ -1,5 +1,5 @@
-import { ElementDragg } from '../../utils/types'
 import { v4 as uuidv4 } from 'uuid'
+import type { ElementDragg } from '../../utils/types'
 import basketball from '../airplane-svgrepo-com.svg'
 import magic from '../magic-svgrepo-com.svg'
 import sugar from '../sugar-svgrepo-com.svg'

@@ -1,25 +1,27 @@
-import {
-  DndContext,
+import type {
   DragEndEvent,
   DragOverEvent,
+} from '@dnd-kit/core'
+import {
+  DndContext,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
-import { BoardSections as BoardSectionsType } from '../../utils/types'
+import { Container } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
+import { useState } from 'react'
+import { arrayMove } from '@dnd-kit/sortable'
+import { Link } from 'react-router-dom'
+import type { BoardSections as BoardSectionsType } from '../../utils/types'
 import suma from '../../assets/data/add'
 import { Banner } from '../../components/Banner'
 import { Modal } from '../../components/Modal'
 import { useDraggableContext } from '../../hooks/useDraggable'
-import { Container } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { INITIAL_DRAGG_MULTIPLY_LEVEL_TWO } from '../../assets/data/multiply_dragg'
 import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
-import { useState } from 'react'
-import { arrayMove } from '@dnd-kit/sortable'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
-import { Link } from 'react-router-dom'
 
 export default function LevelTwoMultiply() {
   const {
@@ -35,8 +37,8 @@ export default function LevelTwoMultiply() {
 
   const draggableItemContent = INITIAL_DRAGG_MULTIPLY_LEVEL_TWO
   const initialBoard = initilizeBoardDrop(draggableItemContent)
-  const [boardSections, setBoardSections] =
-    useState<BoardSectionsType>(initialBoard)
+  const [boardSections, setBoardSections]
+    = useState<BoardSectionsType>(initialBoard)
 
   const handleDragOver = ({ active, over }: DragOverEvent) => {
     // Find the containers
@@ -50,26 +52,25 @@ export default function LevelTwoMultiply() {
     )
 
     if (
-      !activeContainer ||
-      !overContainer ||
-      activeContainer === overContainer
-    ) {
+      !activeContainer
+      || !overContainer
+      || activeContainer === overContainer
+    )
       return
-    }
 
     setBoardSections((boardSection) => {
       const activeItems = boardSection[activeContainer]
       const overItems = boardSection[overContainer]
 
       // Find the indexes for the items
-      const activeIndex = activeItems.findIndex((item) => item.id === active.id)
-      const overIndex = overItems.findIndex((item) => item.id !== over?.id)
+      const activeIndex = activeItems.findIndex(item => item.id === active.id)
+      const overIndex = overItems.findIndex(item => item.id !== over?.id)
 
       return {
         ...boardSection,
         [activeContainer]: [
           ...boardSection[activeContainer].filter(
-            (item) => item.id !== active.id,
+            item => item.id !== active.id,
           ),
         ],
         [overContainer]: [
@@ -95,22 +96,21 @@ export default function LevelTwoMultiply() {
     )
 
     if (
-      !activeContainer ||
-      !overContainer ||
-      activeContainer !== overContainer
-    ) {
+      !activeContainer
+      || !overContainer
+      || activeContainer !== overContainer
+    )
       return
-    }
 
     const activeIndex = boardSections[activeContainer].findIndex(
-      (item) => item.id === active.id,
+      item => item.id === active.id,
     )
     const overIndex = boardSections[overContainer].findIndex(
-      (item) => item.id === over?.id,
+      item => item.id === over?.id,
     )
 
     if (activeIndex !== overIndex) {
-      setBoardSections((boardSection) => ({
+      setBoardSections(boardSection => ({
         ...boardSection,
         [overContainer]: arrayMove(
           boardSection[overContainer],
@@ -129,9 +129,9 @@ export default function LevelTwoMultiply() {
   return (
     <>
       <Banner
-        title='Multiplicacion - Level 2'
+        title="Multiplicacion - Level 2"
         handleModalClick={handleModalClick}
-        icon='*'
+        icon="*"
       />
       <Modal
         title={suma.title}
@@ -150,13 +150,13 @@ export default function LevelTwoMultiply() {
           <Grid
             container
             spacing={8}
-            display='flex'
-            justifyContent='center'
-            alignItems='center'
-            flexWrap='wrap'
-            height='83.3vh'
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+            height="83.3vh"
           >
-            {Object.keys(boardSections).map((boardSectionKey) => (
+            {Object.keys(boardSections).map(boardSectionKey => (
               <Grid key={boardSectionKey} xs={6}>
                 <BoardDroppableSection
                   id={boardSectionKey}
@@ -169,10 +169,10 @@ export default function LevelTwoMultiply() {
             </DragOverlay>
           </Grid>
         </DndContext>
-        <div className='flex justify-end p-2'>
+        <div className="flex justify-end p-2">
           <Link
-            to='/level-add/levelthree'
-            className='hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition'
+            to="/level-add/levelthree"
+            className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel
           </Link>

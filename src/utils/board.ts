@@ -1,8 +1,8 @@
-import { BoardSections, ElementDragg, Status } from './types'
+import type { BoardSections, ElementDragg, Status } from './types'
 import { BOARD_SECTIONS } from './constants'
 import { getStatusElementDragg } from './elementDragg'
 
-export const initilizeBoardDrop = (elementDraggs: ElementDragg[]) => {
+export function initilizeBoardDrop(elementDraggs: ElementDragg[]) {
   const boardSections: BoardSections = {}
 
   Object.keys(BOARD_SECTIONS).forEach((boardSectionKey) => {
@@ -15,14 +15,12 @@ export const initilizeBoardDrop = (elementDraggs: ElementDragg[]) => {
   return boardSections
 }
 
-export const findSectionContainer = (
-  boardSections: BoardSections,
-  id: string,
-) => {
-  if (id in boardSections) return id
+export function findSectionContainer(boardSections: BoardSections, id: string) {
+  if (id in boardSections)
+    return id
 
   const container = Object.keys(boardSections).find((key) => {
-    return boardSections[key].find((item) => item.id === id)
+    return boardSections[key].find(item => item.id === id)
   })
 
   return container

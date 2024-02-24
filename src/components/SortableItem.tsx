@@ -2,19 +2,17 @@ import React from 'react'
 import { CSS } from '@dnd-kit/utilities'
 import { useSortable } from '@dnd-kit/sortable'
 
-type SortableTaskItemProps = {
+interface SortableTaskItemProps {
   children: React.ReactNode
   id: string | null
   disabled: boolean
 }
 
-export const SortableItem = ({
+export function SortableItem({
   children,
-  id,
+  id = '',
   disabled,
-}: SortableTaskItemProps) => {
-  if (!id) return null
-
+}: SortableTaskItemProps) {
   const {
     attributes,
     listeners,
@@ -22,7 +20,7 @@ export const SortableItem = ({
     transform,
     transition,
     isDragging,
-  } = useSortable({ id, disabled })
+  } = useSortable({ id: id!, disabled })
 
   const style = {
     transform: CSS.Transform.toString(transform),

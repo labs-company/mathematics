@@ -1,10 +1,12 @@
-import {
+import type {
   DragStartEvent,
   DropAnimation,
-  KeyboardSensor,
-  PointerSensor,
   SensorDescriptor,
   SensorOptions,
+} from '@dnd-kit/core'
+import {
+  KeyboardSensor,
+  PointerSensor,
   defaultDropAnimation,
   useSensor,
   useSensors,
@@ -12,7 +14,7 @@ import {
 import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { createContext, useState } from 'react'
 
-type ContextGlobals = {
+interface ContextGlobals {
   open: boolean
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
   activeId: string | null
@@ -23,7 +25,7 @@ type ContextGlobals = {
   dropAnimation: DropAnimation
 }
 
-type ContextProps = {
+interface ContextProps {
   children: JSX.Element
 }
 

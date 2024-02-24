@@ -1,12 +1,12 @@
 import { useDroppable } from '@dnd-kit/core'
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { Box } from '@mui/material'
-import { ElementDragg } from '../utils/types'
+import { useState } from 'react'
+import type { ElementDragg } from '../utils/types'
 import { ItemDraggable } from './ItemDraggable'
 import { SortableItem } from './SortableItem'
-import { useState } from 'react'
 
-type BoardDroppableProp = {
+interface BoardDroppableProp {
   id: string
   itemsDragg: ElementDragg[]
 }
@@ -20,15 +20,10 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
 
   const isElderly = maxOfElement <= 3
 
-  console.log(maxOfElement)
-
-  console.log(isElderly)
-
   const isReferenceElement = (el: HTMLDivElement) => {
     setNodeRef(el)
-    if (el) {
+    if (el)
       setMaxOfElement(el.children.length)
-    }
   }
   return (
     <Box
@@ -38,15 +33,15 @@ export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
         height: 'max-content',
         borderRadius: '20px',
       }}
-      className='shadow'
+      className="shadow"
     >
       <SortableContext
         id={id}
         items={itemsDragg}
         strategy={verticalListSortingStrategy}
       >
-        <div ref={isReferenceElement} className='flex justify-center flex-wrap'>
-          {itemsDragg.map((dragItem) => (
+        <div ref={isReferenceElement} className="flex justify-center flex-wrap">
+          {itemsDragg.map(dragItem => (
             <Box
               key={dragItem.id}
               sx={{

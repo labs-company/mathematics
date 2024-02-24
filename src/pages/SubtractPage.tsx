@@ -1,25 +1,27 @@
 import { Container } from '@mui/material'
-import subtract from '../assets/data/subtract'
-import { Banner } from '../components/Banner'
-import { Modal } from '../components/Modal'
-import { useDraggableContext } from '../hooks/useDraggable'
-import {
-  DndContext,
+import type {
   DragEndEvent,
   DragOverEvent,
+} from '@dnd-kit/core'
+import {
+  DndContext,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
-import { BoardDroppableSection } from '../components/BoardSectionDrop'
-import { BoardSections as BoardSectionsType } from '../utils/types'
-import { ItemDraggable } from '../components/ItemDraggable'
-import { getElementDraggId } from '../utils/elementDragg'
 import { arrayMove } from '@dnd-kit/sortable'
-import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
-import { INITIAL_DRAGG_SUBTRACT } from '../assets/data/subtract_dragg'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import subtract from '../assets/data/subtract'
+import { Banner } from '../components/Banner'
+import { Modal } from '../components/Modal'
+import { useDraggableContext } from '../hooks/useDraggable'
+import { BoardDroppableSection } from '../components/BoardSectionDrop'
+import type { BoardSections as BoardSectionsType } from '../utils/types'
+import { ItemDraggable } from '../components/ItemDraggable'
+import { getElementDraggId } from '../utils/elementDragg'
+import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
+import { INITIAL_DRAGG_SUBTRACT } from '../assets/data/subtract_dragg'
 
 export default function SubtractPage() {
   const {
@@ -35,8 +37,8 @@ export default function SubtractPage() {
 
   const draggItemContent = INITIAL_DRAGG_SUBTRACT
   const initialBoard = initilizeBoardDrop(draggItemContent)
-  const [boardSections, setBoardSections] =
-    useState<BoardSectionsType>(initialBoard)
+  const [boardSections, setBoardSections]
+    = useState<BoardSectionsType>(initialBoard)
 
   const handleDragOver = ({ active, over }: DragOverEvent) => {
     // Find the containers
@@ -50,26 +52,25 @@ export default function SubtractPage() {
     )
 
     if (
-      !activeContainer ||
-      !overContainer ||
-      activeContainer === overContainer
-    ) {
+      !activeContainer
+      || !overContainer
+      || activeContainer === overContainer
+    )
       return
-    }
 
     setBoardSections((boardSection) => {
       const activeItems = boardSection[activeContainer]
       const overItems = boardSection[overContainer]
 
       // Find the indexes for the items
-      const activeIndex = activeItems.findIndex((item) => item.id === active.id)
-      const overIndex = overItems.findIndex((item) => item.id !== over?.id)
+      const activeIndex = activeItems.findIndex(item => item.id === active.id)
+      const overIndex = overItems.findIndex(item => item.id !== over?.id)
 
       return {
         ...boardSection,
         [activeContainer]: [
           ...boardSection[activeContainer].filter(
-            (item) => item.id !== active.id,
+            item => item.id !== active.id,
           ),
         ],
         [overContainer]: [
@@ -95,22 +96,21 @@ export default function SubtractPage() {
     )
 
     if (
-      !activeContainer ||
-      !overContainer ||
-      activeContainer !== overContainer
-    ) {
+      !activeContainer
+      || !overContainer
+      || activeContainer !== overContainer
+    )
       return
-    }
 
     const activeIndex = boardSections[activeContainer].findIndex(
-      (item) => item.id === active.id,
+      item => item.id === active.id,
     )
     const overIndex = boardSections[overContainer].findIndex(
-      (item) => item.id === over?.id,
+      item => item.id === over?.id,
     )
 
     if (activeIndex !== overIndex) {
-      setBoardSections((boardSection) => ({
+      setBoardSections(boardSection => ({
         ...boardSection,
         [overContainer]: arrayMove(
           boardSection[overContainer],
@@ -128,9 +128,9 @@ export default function SubtractPage() {
   return (
     <>
       <Banner
-        title='Resta - Nivel 1'
+        title="Resta - Nivel 1"
         handleModalClick={handleModalClick}
-        icon='-'
+        icon="-"
       />
       <Modal
         title={subtract.title}
@@ -149,13 +149,13 @@ export default function SubtractPage() {
           <Grid
             container
             spacing={8}
-            display='flex'
-            justifyContent='center'
-            alignItems='center'
-            flexWrap='wrap'
-            height='83.3vh'
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+            height="83.3vh"
           >
-            {Object.keys(boardSections).map((boardSectionKey) => (
+            {Object.keys(boardSections).map(boardSectionKey => (
               <Grid key={boardSectionKey} xs={6}>
                 <BoardDroppableSection
                   id={boardSectionKey}
@@ -168,10 +168,10 @@ export default function SubtractPage() {
             </DragOverlay>
           </Grid>
         </DndContext>
-        <div className='flex justify-end p-2'>
+        <div className="flex justify-end p-2">
           <Link
-            to='/level-subtract/leveltwo'
-            className='hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition'
+            to="/level-subtract/leveltwo"
+            className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel
           </Link>

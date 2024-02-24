@@ -1,4 +1,4 @@
-/**@postcss */
+/** @postcss */
 export default {
   plugins: {
     tailwindcss: {},
