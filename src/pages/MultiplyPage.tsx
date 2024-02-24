@@ -1,10 +1,8 @@
 import { Container } from '@mui/material'
-import type {
-  DragEndEvent,
-  DragOverEvent,
-} from '@dnd-kit/core'
 import {
   DndContext,
+  type DragEndEvent,
+  type DragOverEvent,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
@@ -12,7 +10,6 @@ import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { arrayMove } from '@dnd-kit/sortable'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import multiply from '../assets/data/multiply'
 import { Banner } from '../components/Banner'
 import { Modal } from '../components/Modal'
 import { useDraggableContext } from '../hooks/useDraggable'
@@ -21,7 +18,7 @@ import type { BoardSections as BoardSectionsType } from '../utils/types'
 import { ItemDraggable } from '../components/ItemDraggable'
 import { getElementDraggId } from '../utils/elementDragg'
 import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
-import { INITIAL_DRAGG_MULTIPLY } from '../assets/data/multiply_dragg'
+import { CONCEPTS, INITIAL_DRAGG_MULTIPLY } from '../utils/constants'
 
 export default function MultiplyPage() {
   const {
@@ -133,8 +130,8 @@ export default function MultiplyPage() {
         icon="*"
       />
       <Modal
-        title={multiply.title}
-        description={multiply.description}
+        title={CONCEPTS.mul.title}
+        description={CONCEPTS.mul.description}
         option={open}
         setOpen={setOpen}
       />

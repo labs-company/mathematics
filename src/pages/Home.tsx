@@ -1,5 +1,4 @@
 import confetti from 'canvas-confetti'
-import fondo from '../assets/fondo.png'
 
 export default function HomePage() {
   return (
@@ -12,7 +11,7 @@ export default function HomePage() {
           <h1 className="font-bold text-5xl">Matematicas</h1>
           <p className="font-light text-xl whitespace-pre-wrap px-5">
             Aprende Matematicas arrastrando y soltando y complemetando las
-            decenas
+            decenas con Dixon
           </p>
           <button
             className="uppercase bg-blue-700 text-white p-4 hover:bg-blue-900 w-64"
@@ -23,7 +22,7 @@ export default function HomePage() {
         </div>
         <div className="w-full h-full">
           <img
-            src={fondo}
+            src="/fondo.png"
             alt="mathematics"
             className="object-contain object-right-bottom w-full h-full"
           />

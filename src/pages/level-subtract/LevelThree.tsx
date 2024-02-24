@@ -1,9 +1,7 @@
-import type {
-  DragEndEvent,
-  DragOverEvent,
-} from '@dnd-kit/core'
 import {
   DndContext,
+  type DragEndEvent,
+  type DragOverEvent,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
@@ -13,15 +11,14 @@ import { useState } from 'react'
 import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
 import type { BoardSections as BoardSectionsType } from '../../utils/types'
-import subtract from '../../assets/data/subtract'
 import { Banner } from '../../components/Banner'
 import { Modal } from '../../components/Modal'
 import { useDraggableContext } from '../../hooks/useDraggable'
-import { INITIAL_DRAGG_SUBTRACT_LEVEL_THREE } from '../../assets/data/subtract_dragg'
 import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
+import { CONCEPTS, INITIAL_DRAGG_SUBTRACT_LEVEL_THREE } from '../../utils/constants'
 
 export default function LevelThreeSubtract() {
   const {
@@ -134,8 +131,8 @@ export default function LevelThreeSubtract() {
         icon="-"
       />
       <Modal
-        title={subtract.title}
-        description={subtract.description}
+        title={CONCEPTS.res.title}
+        description={CONCEPTS.res.description}
         option={open}
         setOpen={setOpen}
       />

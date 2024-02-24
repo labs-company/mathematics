@@ -1,9 +1,7 @@
-import type {
-  DragEndEvent,
-  DragOverEvent,
-} from '@dnd-kit/core'
 import {
   DndContext,
+  type DragEndEvent,
+  type DragOverEvent,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
@@ -13,15 +11,14 @@ import { useState } from 'react'
 import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
 import type { BoardSections as BoardSectionsType } from '../../utils/types'
-import suma from '../../assets/data/add'
 import { Banner } from '../../components/Banner'
 import { Modal } from '../../components/Modal'
 import { useDraggableContext } from '../../hooks/useDraggable'
-import { INITIAL_DRAGG_MULTIPLY_LEVEL_THREE } from '../../assets/data/multiply_dragg'
 import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
+import { CONCEPTS, INITIAL_DRAGG_MULTIPLY_LEVEL_THREE } from '../../utils/constants'
 
 export default function LevelThreeMultiply() {
   const {
@@ -134,8 +131,8 @@ export default function LevelThreeMultiply() {
         icon="*"
       />
       <Modal
-        title={suma.title}
-        description={suma.description}
+        title={CONCEPTS.mul.title}
+        description={CONCEPTS.mul.description}
         option={open}
         setOpen={setOpen}
       />

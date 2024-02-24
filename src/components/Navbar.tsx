@@ -1,7 +1,6 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo-page.png'
 
 const links = [
   { name: 'Suma', href: '/add', current: false },
@@ -39,12 +38,12 @@ export function Navbar() {
                 <div className="flex flex-shrink-0 items-center gap-3">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src={logo}
+                    src="/logo-page.png"
                     alt="Math"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src={logo}
+                    src="/logo-page.png"
                     alt="Math"
                   />
                   <Link className="text-2xl font-bold" to="/">

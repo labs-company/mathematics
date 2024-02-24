@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Unstable_Grid2'
-import type {
-  DragEndEvent,
-  DragOverEvent,
-} from '@dnd-kit/core'
 import {
   DndContext,
+  type DragEndEvent,
+  type DragOverEvent,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
@@ -14,14 +12,13 @@ import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
 import { Banner } from '../components/Banner'
 import { Modal } from '../components/Modal'
-import suma from '../assets/data/add'
-import { INITIAL_DRAGG } from '../assets/data/add_dragg'
 import type { BoardSections as BoardSectionsType } from '../utils/types'
 import { getElementDraggId } from '../utils/elementDragg'
 import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
 import { BoardDroppableSection } from '../components/BoardSectionDrop'
 import { ItemDraggable } from '../components/ItemDraggable'
 import { useDraggableContext } from '../hooks/useDraggable'
+import { CONCEPTS, INITIAL_DRAGG } from '../utils/constants'
 
 export default function AddPage() {
   const {
@@ -131,8 +128,8 @@ export default function AddPage() {
         icon="+"
       />
       <Modal
-        title={suma.title}
-        description={suma.description}
+        title={CONCEPTS.sum.title}
+        description={CONCEPTS.sum.description}
         option={open}
         setOpen={setOpen}
       />

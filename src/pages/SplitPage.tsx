@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Unstable_Grid2'
-import type {
-  DragEndEvent,
-  DragOverEvent,
-} from '@dnd-kit/core'
 import {
   DndContext,
+  type DragEndEvent,
+  type DragOverEvent,
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
@@ -14,14 +12,13 @@ import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
 import { Banner } from '../components/Banner'
 import { Modal } from '../components/Modal'
-import split from '../assets/data/split'
-import { INITIAL_DRAGG_SPLIT } from '../assets/data/split_dragg'
 import type { BoardSections as BoardSectionsType } from '../utils/types'
 import { getElementDraggId } from '../utils/elementDragg'
 import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
 import { BoardDroppableSection } from '../components/BoardSectionDrop'
 import { ItemDraggable } from '../components/ItemDraggable'
 import { useDraggableContext } from '../hooks/useDraggable'
+import { CONCEPTS, INITIAL_DRAGG_SPLIT } from '../utils/constants'
 
 export default function SplitPage() {
   const {
@@ -133,8 +130,8 @@ export default function SplitPage() {
         icon="/"
       />
       <Modal
-        title={split.title}
-        description={split.description}
+        title={CONCEPTS.div.title}
+        description={CONCEPTS.div.description}
         option={open}
         setOpen={setOpen}
       />
