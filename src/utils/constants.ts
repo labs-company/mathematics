@@ -506,6 +506,56 @@ export const INITIAL_DRAGG_SUBTRACT: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/airplane-svgrepo-com.svg',
     status: 'done',
   },
   {
@@ -574,6 +624,41 @@ export const INITIAL_DRAGG_SUBTRACT_LEVEL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/magic-svgrepo-com.svg',
     status: 'done',
   },
   {
@@ -594,27 +679,12 @@ export const INITIAL_DRAGG_SUBTRACT_LEVEL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/magic-svgrepo-com.svg',
-    status: 'done',
-  },
-  {
-    id: uuidv4(),
-    content: '/magic-svgrepo-com.svg',
-    status: 'done',
-  },
-  {
-    id: uuidv4(),
-    content: '/magic-svgrepo-com.svg',
     status: 'backlog',
   },
   {
     id: uuidv4(),
     content: '/magic-svgrepo-com.svg',
     status: 'backlog',
-  },
-  {
-    id: uuidv4(),
-    content: '/magic-svgrepo-com.svg',
-    status: 'done',
   },
   {
     id: uuidv4(),
@@ -642,12 +712,12 @@ export const INITIAL_DRAGG_SUBTRACT_LEVEL_THREE: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/sugar-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
     content: '/sugar-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
@@ -662,12 +732,42 @@ export const INITIAL_DRAGG_SUBTRACT_LEVEL_THREE: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/sugar-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
     content: '/sugar-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/sugar-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/sugar-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/sugar-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/sugar-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/sugar-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/sugar-svgrepo-com.svg',
+    status: 'backlog',
   },
   {
     id: uuidv4(),

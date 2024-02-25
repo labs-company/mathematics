@@ -161,6 +161,7 @@ export default function LevelTwoAdd() {
                 <BoardDroppableSection
                   id={boardSectionKey}
                   itemsDragg={boardSections[boardSectionKey]}
+                  maxLength={11}
                 />
               </Grid>
             ))}

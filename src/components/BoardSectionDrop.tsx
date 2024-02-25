@@ -9,16 +9,17 @@ import { SortableItem } from './SortableItem'
 interface BoardDroppableProp {
   id: string
   itemsDragg: ElementDragg[]
+  maxLength?: number
 }
 
-export function BoardDroppableSection({ id, itemsDragg }: BoardDroppableProp) {
+export function BoardDroppableSection({ id, itemsDragg, maxLength }: BoardDroppableProp) {
   const { setNodeRef } = useDroppable({
     id,
   })
 
   const [maxOfElement, setMaxOfElement] = useState(itemsDragg.length)
 
-  const isElderly = maxOfElement <= 3
+  const isElderly = maxOfElement <= maxLength!
 
   const isReferenceElement = (el: HTMLDivElement) => {
     setNodeRef(el)

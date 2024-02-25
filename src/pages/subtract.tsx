@@ -156,13 +156,16 @@ export default function Subtract() {
             height="83.3vh"
           >
             {Object.keys(boardSections).map(boardSectionKey => (
-              <Grid key={boardSectionKey} xs={6}>
-                <BoardDroppableSection
-                  id={boardSectionKey}
-                  itemsDragg={boardSections[boardSectionKey]}
-                />
-              </Grid>
+              <>
+                <Grid key={boardSectionKey} xs={6}>
+                  <BoardDroppableSection
+                    id={boardSectionKey}
+                    itemsDragg={boardSections[boardSectionKey]}
+                  />
+                </Grid>
+              </>
             ))}
+
             <DragOverlay dropAnimation={dropAnimation}>
               {dragg ? <ItemDraggable dragg={dragg} /> : null}
             </DragOverlay>
