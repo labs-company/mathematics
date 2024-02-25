@@ -35,7 +35,11 @@ export const RESULTS = {
       numberTwo: 5,
       result: 7,
     },
-    lvlThree: {},
+    lvlThree: {
+      numberOne: 13,
+      numberTwo: 4,
+      result: 9,
+    },
   },
   mul: {
     lvlOne: {
@@ -48,7 +52,11 @@ export const RESULTS = {
       numberTwo: 8,
       result: 48,
     },
-    lvlThree: {},
+    lvlThree: {
+      numberOne: 5,
+      numberTwo: 5,
+      result: 25,
+    },
   },
   div: {
     lvlOne: {
@@ -61,7 +69,11 @@ export const RESULTS = {
       numberTwo: 6,
       result: 3.3,
     },
-    lvlThree: {},
+    lvlThree: {
+      numberOne: 20,
+      numberTwo: 6,
+      result: 3.3,
+    },
   },
 }
 

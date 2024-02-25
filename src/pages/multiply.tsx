@@ -18,7 +18,7 @@ import type { BoardSections as BoardSectionsType } from '../utils/types'
 import { ItemDraggable } from '../components/ItemDraggable'
 import { getElementDraggId } from '../utils/elementDragg'
 import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
-import { CONCEPTS, INITIAL_DRAGG_MULTIPLY } from '../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_MULTIPLY, RESULTS } from '../utils/constants'
 
 export default function Multiply() {
   const {
@@ -128,6 +128,9 @@ export default function Multiply() {
         title="Multiplicacion - Nivel 1"
         handleModalClick={handleModalClick}
         icon="*"
+        numberOne={RESULTS.mul.lvlOne.numberOne}
+        numberTwo={RESULTS.mul.lvlOne.numberTwo}
+        result={RESULTS.mul.lvlOne.result}
       />
       <Modal
         title={CONCEPTS.mul.title}

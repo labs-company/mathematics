@@ -18,7 +18,7 @@ import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
-import { CONCEPTS, INITIAL_DRAGG_MULTIPLY_LEVEL_THREE } from '../../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_MULTIPLY_LEVEL_THREE, RESULTS } from '../../utils/constants'
 
 export default function LevelThreeMultiply() {
   const {
@@ -129,6 +129,9 @@ export default function LevelThreeMultiply() {
         title="Multiplicacion - Level 3"
         handleModalClick={handleModalClick}
         icon="*"
+        numberOne={RESULTS.mul.lvlThree.numberOne}
+        numberTwo={RESULTS.mul.lvlThree.numberTwo}
+        result={RESULTS.mul.lvlThree.result}
       />
       <Modal
         title={CONCEPTS.mul.title}

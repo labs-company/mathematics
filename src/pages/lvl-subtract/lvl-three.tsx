@@ -18,7 +18,7 @@ import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
-import { CONCEPTS, INITIAL_DRAGG_SUBTRACT_LEVEL_THREE } from '../../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_SUBTRACT_LEVEL_THREE, RESULTS } from '../../utils/constants'
 
 export default function LevelThreeSubtract() {
   const {
@@ -129,6 +129,9 @@ export default function LevelThreeSubtract() {
         title="Resta - Level 3"
         handleModalClick={handleModalClick}
         icon="-"
+        numberOne={RESULTS.res.lvlThree.numberOne}
+        numberTwo={RESULTS.res.lvlThree.numberTwo}
+        result={RESULTS.res.lvlThree.result}
       />
       <Modal
         title={CONCEPTS.res.title}

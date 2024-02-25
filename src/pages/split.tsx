@@ -18,7 +18,7 @@ import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
 import { BoardDroppableSection } from '../components/BoardSectionDrop'
 import { ItemDraggable } from '../components/ItemDraggable'
 import { useDraggableContext } from '../hooks/useDraggable'
-import { CONCEPTS, INITIAL_DRAGG_SPLIT } from '../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_SPLIT, RESULTS } from '../utils/constants'
 
 export default function Split() {
   const {
@@ -128,6 +128,9 @@ export default function Split() {
         title="Division - Nivel 1"
         handleModalClick={handleModalClick}
         icon="/"
+        numberOne={RESULTS.div.lvlOne.numberOne}
+        numberTwo={RESULTS.div.lvlOne.numberTwo}
+        result={RESULTS.div.lvlOne.result}
       />
       <Modal
         title={CONCEPTS.div.title}

@@ -18,7 +18,7 @@ import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
-import { CONCEPTS, INITIAL_DRAGG_MULTIPLY_LEVEL_TWO } from '../../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_MULTIPLY_LEVEL_TWO, RESULTS } from '../../utils/constants'
 
 export default function LevelTwoMultiply() {
   const {
@@ -128,7 +128,10 @@ export default function LevelTwoMultiply() {
       <Banner
         title="Division - Level 2"
         handleModalClick={handleModalClick}
-        icon="*"
+        icon="/"
+        numberOne={RESULTS.div.lvlTwo.numberOne}
+        numberTwo={RESULTS.div.lvlTwo.numberTwo}
+        result={RESULTS.div.lvlTwo.result}
       />
       <Modal
         title={CONCEPTS.div.title}
