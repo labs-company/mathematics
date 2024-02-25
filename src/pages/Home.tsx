@@ -1,6 +1,6 @@
 import confetti from 'canvas-confetti'
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
       <section
@@ -25,6 +25,7 @@ export default function HomePage() {
             src="/fondo.png"
             alt="mathematics"
             className="object-contain object-right-bottom w-full h-full"
+            loading="lazy"
           />
         </div>
       </section>

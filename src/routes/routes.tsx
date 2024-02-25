@@ -1,35 +1,39 @@
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../pages/Home'
-import AddPage from '../pages/AddPage'
-import SubtractPage from '../pages/SubtractPage'
-import MultiplyPage from '../pages/MultiplyPage'
-import SplitPage from '../pages/SplitPage'
-import NotFoundPage from '../pages/NotFoundPage'
-import LevelTwoAdd from '../pages/level-add/LevelTwo'
-import LevelThreeAdd from '../pages/level-add/LevelThree'
-import LevelTwoSubtract from '../pages/level-subtract/LevelTwo'
-import LevelThreeSubtract from '../pages/level-subtract/LevelThree'
-import LevelTwoMultiply from '../pages/level-multiply/LevelTwo'
-import LevelThreeMultiply from '../pages/level-multiply/LevelThree'
+import Home from '../pages/home'
+import Sum from '../pages/sum'
+import SumLvlTwo from '../pages/lvl-sum/lvl-two'
+import SumLvlThree from '../pages/lvl-sum/lvl-three'
+import Subtract from '../pages/subtract'
+import SubtractLvlTwo from '../pages/lvl-subtract/lvl-two'
+import SubtractLvlThree from '../pages/lvl-subtract/lvl-three'
+import Multiply from '../pages/multiply'
+import MultiplyLvlTwo from '../pages/lvl-multiply/lvl-two'
+import MultiplyLvlThree from '../pages/lvl-multiply/lvl-three'
+import Split from '../pages/split'
+import SplitLvlTwo from '../pages/lvl-split/lvl-two'
+import SplitLvlThree from '../pages/lvl-split/lvl-three'
+import NotFound from '../pages/not-found'
 
 export default function RoutesApplication() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/add" element={<AddPage />} />
-      <Route path="/level-add/leveltwo" element={<LevelTwoAdd />} />
-      <Route path="/level-add/levelthree" element={<LevelThreeAdd />} />
-      <Route path="/subtract" element={<SubtractPage />} />
-      <Route path="/level-subtract/leveltwo" element={<LevelTwoSubtract />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/sum" element={<Sum />} />
+      <Route path="/sum/lvl-two" element={<SumLvlTwo />} />
+      <Route path="/sum/lvl-three" element={<SumLvlThree />} />
+      <Route path="/subtract" element={<Subtract />} />
+      <Route path="/subtract/lvl-two" element={<SubtractLvlTwo />} />
       <Route
-        path="/level-subtract/levelthree"
-        element={<LevelThreeSubtract />}
+        path="/subtract/lvl-three"
+        element={<SubtractLvlThree />}
       />
-      <Route path="/multiply" element={<MultiplyPage />} />
-      <Route path="/level-multiply/leveltwo" element={<LevelTwoMultiply />} />
-      <Route path="/level-multiply/three" element={<LevelThreeMultiply />} />
-      <Route path="/split" element={<SplitPage />} />
-      <Route path="*" element={<NotFoundPage />} />
+      <Route path="/multiply" element={<Multiply />} />
+      <Route path="/multiply/lvl-two" element={<MultiplyLvlTwo />} />
+      <Route path="/multiply/lvl-three" element={<MultiplyLvlThree />} />
+      <Route path="/split" element={<Split />} />
+      <Route path="/split/lvl-two" element={<SplitLvlTwo />} />
+      <Route path="/split/lvl-three" element={<SplitLvlThree />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

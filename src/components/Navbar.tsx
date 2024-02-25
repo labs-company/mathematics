@@ -3,7 +3,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom'
 
 const links = [
-  { name: 'Suma', href: '/add', current: false },
+  { name: 'Suma', href: '/sum', current: false },
   { name: 'Resta', href: '/subtract', current: false },
   { name: 'Multiplicacion', href: '/multiply', current: false },
   { name: 'Division', href: '/split', current: false },

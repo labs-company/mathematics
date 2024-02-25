@@ -168,7 +168,7 @@ export default function LevelTwoMultiply() {
         </DndContext>
         <div className="flex justify-end p-2">
           <Link
-            to="/level-add/levelthree"
+            to="/multiply/lvl-three"
             className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel

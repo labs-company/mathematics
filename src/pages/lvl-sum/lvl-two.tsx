@@ -6,7 +6,7 @@ import {
   closestCorners,
 } from '@dnd-kit/core'
 import { Container } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2'
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { useState } from 'react'
 import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
@@ -18,9 +18,9 @@ import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
-import { CONCEPTS, INITIAL_DRAGG_SUBTRACT_LEVEL_TWO } from '../../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_LVL_TWO } from '../../utils/constants'
 
-export default function LevelTwoSubtract() {
+export default function LevelTwoAdd() {
   const {
     handleModalClick,
     open,
@@ -32,7 +32,7 @@ export default function LevelTwoSubtract() {
     dropAnimation,
   } = useDraggableContext()
 
-  const draggableItemContent = INITIAL_DRAGG_SUBTRACT_LEVEL_TWO
+  const draggableItemContent = INITIAL_DRAGG_LVL_TWO
   const initialBoard = initilizeBoardDrop(draggableItemContent)
   const [boardSections, setBoardSections]
     = useState<BoardSectionsType>(initialBoard)
@@ -126,13 +126,13 @@ export default function LevelTwoSubtract() {
   return (
     <>
       <Banner
-        title="Resta - Level 2"
+        title="Suma - Level 2"
         handleModalClick={handleModalClick}
-        icon="-"
+        icon="+"
       />
       <Modal
-        title={CONCEPTS.res.title}
-        description={CONCEPTS.res.description}
+        title={CONCEPTS.sum.title}
+        description={CONCEPTS.sum.description}
         option={open}
         setOpen={setOpen}
       />
@@ -168,7 +168,7 @@ export default function LevelTwoSubtract() {
         </DndContext>
         <div className="flex justify-end p-2">
           <Link
-            to="/level-subtract/levelthree"
+            to="/sum/lvl-three"
             className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel

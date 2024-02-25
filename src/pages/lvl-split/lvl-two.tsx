@@ -1,4 +1,3 @@
-import { Container } from '@mui/material'
 import {
   DndContext,
   type DragEndEvent,
@@ -6,34 +5,35 @@ import {
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
+import { Container } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
-import { arrayMove } from '@dnd-kit/sortable'
 import { useState } from 'react'
+import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
-import { Banner } from '../components/Banner'
-import { Modal } from '../components/Modal'
-import { useDraggableContext } from '../hooks/useDraggable'
-import { BoardDroppableSection } from '../components/BoardSectionDrop'
-import type { BoardSections as BoardSectionsType } from '../utils/types'
-import { ItemDraggable } from '../components/ItemDraggable'
-import { getElementDraggId } from '../utils/elementDragg'
-import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
-import { CONCEPTS, INITIAL_DRAGG_MULTIPLY } from '../utils/constants'
+import type { BoardSections as BoardSectionsType } from '../../utils/types'
+import { Banner } from '../../components/Banner'
+import { Modal } from '../../components/Modal'
+import { useDraggableContext } from '../../hooks/useDraggable'
+import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
+import { getElementDraggId } from '../../utils/elementDragg'
+import { BoardDroppableSection } from '../../components/BoardSectionDrop'
+import { ItemDraggable } from '../../components/ItemDraggable'
+import { CONCEPTS, INITIAL_DRAGG_MULTIPLY_LEVEL_TWO } from '../../utils/constants'
 
-export default function MultiplyPage() {
+export default function LevelTwoMultiply() {
   const {
+    handleModalClick,
     open,
     setOpen,
-    activeId,
-    setActivedId,
     sensors,
     handleDragStart,
-    handleModalClick,
+    activeId,
+    setActivedId,
     dropAnimation,
   } = useDraggableContext()
 
-  const draggItemContent = INITIAL_DRAGG_MULTIPLY
-  const initialBoard = initilizeBoardDrop(draggItemContent)
+  const draggableItemContent = INITIAL_DRAGG_MULTIPLY_LEVEL_TWO
+  const initialBoard = initilizeBoardDrop(draggableItemContent)
   const [boardSections, setBoardSections]
     = useState<BoardSectionsType>(initialBoard)
 
@@ -120,18 +120,19 @@ export default function MultiplyPage() {
     setActivedId(null)
   }
 
-  const dragg = activeId ? getElementDraggId(draggItemContent, activeId) : null
-
+  const dragg = activeId
+    ? getElementDraggId(draggableItemContent, activeId)
+    : null
   return (
     <>
       <Banner
-        title="Multiplicacion - Nivel 1"
+        title="Division - Level 2"
         handleModalClick={handleModalClick}
         icon="*"
       />
       <Modal
-        title={CONCEPTS.mul.title}
-        description={CONCEPTS.mul.description}
+        title={CONCEPTS.div.title}
+        description={CONCEPTS.div.description}
         option={open}
         setOpen={setOpen}
       />
@@ -167,7 +168,7 @@ export default function MultiplyPage() {
         </DndContext>
         <div className="flex justify-end p-2">
           <Link
-            to="/level-multiply/leveltwo"
+            to="/split/lvl-three"
             className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel

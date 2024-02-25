@@ -20,7 +20,7 @@ import { ItemDraggable } from '../components/ItemDraggable'
 import { useDraggableContext } from '../hooks/useDraggable'
 import { CONCEPTS, INITIAL_DRAGG_SPLIT } from '../utils/constants'
 
-export default function SplitPage() {
+export default function Split() {
   const {
     open,
     setOpen,
@@ -167,7 +167,7 @@ export default function SplitPage() {
         </DndContext>
         <div className="flex justify-end p-2">
           <Link
-            to="/level-split/leveltwo"
+            to="/split/lvl-two"
             className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel

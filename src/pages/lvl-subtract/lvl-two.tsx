@@ -1,4 +1,3 @@
-import { Container } from '@mui/material'
 import {
   DndContext,
   type DragEndEvent,
@@ -6,34 +5,35 @@ import {
   DragOverlay,
   closestCorners,
 } from '@dnd-kit/core'
-import Grid from '@mui/material/Unstable_Grid2/Grid2'
-import { arrayMove } from '@dnd-kit/sortable'
+import { Container } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 import { useState } from 'react'
+import { arrayMove } from '@dnd-kit/sortable'
 import { Link } from 'react-router-dom'
-import { Banner } from '../components/Banner'
-import { Modal } from '../components/Modal'
-import { useDraggableContext } from '../hooks/useDraggable'
-import { BoardDroppableSection } from '../components/BoardSectionDrop'
-import type { BoardSections as BoardSectionsType } from '../utils/types'
-import { ItemDraggable } from '../components/ItemDraggable'
-import { getElementDraggId } from '../utils/elementDragg'
-import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
-import { CONCEPTS, INITIAL_DRAGG_SUBTRACT } from '../utils/constants'
+import type { BoardSections as BoardSectionsType } from '../../utils/types'
+import { Banner } from '../../components/Banner'
+import { Modal } from '../../components/Modal'
+import { useDraggableContext } from '../../hooks/useDraggable'
+import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
+import { getElementDraggId } from '../../utils/elementDragg'
+import { BoardDroppableSection } from '../../components/BoardSectionDrop'
+import { ItemDraggable } from '../../components/ItemDraggable'
+import { CONCEPTS, INITIAL_DRAGG_SUBTRACT_LEVEL_TWO } from '../../utils/constants'
 
-export default function SubtractPage() {
+export default function LevelTwoSubtract() {
   const {
+    handleModalClick,
     open,
     setOpen,
-    activeId,
-    setActivedId,
     sensors,
     handleDragStart,
-    handleModalClick,
+    activeId,
+    setActivedId,
     dropAnimation,
   } = useDraggableContext()
 
-  const draggItemContent = INITIAL_DRAGG_SUBTRACT
-  const initialBoard = initilizeBoardDrop(draggItemContent)
+  const draggableItemContent = INITIAL_DRAGG_SUBTRACT_LEVEL_TWO
+  const initialBoard = initilizeBoardDrop(draggableItemContent)
   const [boardSections, setBoardSections]
     = useState<BoardSectionsType>(initialBoard)
 
@@ -120,12 +120,13 @@ export default function SubtractPage() {
     setActivedId(null)
   }
 
-  const dragg = activeId ? getElementDraggId(draggItemContent, activeId) : null
-
+  const dragg = activeId
+    ? getElementDraggId(draggableItemContent, activeId)
+    : null
   return (
     <>
       <Banner
-        title="Resta - Nivel 1"
+        title="Resta - Level 2"
         handleModalClick={handleModalClick}
         icon="-"
       />
@@ -167,7 +168,7 @@ export default function SubtractPage() {
         </DndContext>
         <div className="flex justify-end p-2">
           <Link
-            to="/level-subtract/leveltwo"
+            to="/subtract/lvl-three"
             className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel

@@ -20,7 +20,7 @@ import { ItemDraggable } from '../components/ItemDraggable'
 import { useDraggableContext } from '../hooks/useDraggable'
 import { CONCEPTS, INITIAL_DRAGG } from '../utils/constants'
 
-export default function AddPage() {
+export default function Sum() {
   const {
     open,
     setOpen,
@@ -165,7 +165,7 @@ export default function AddPage() {
         </DndContext>
         <div className="flex justify-end p-2">
           <Link
-            to="/level-add/leveltwo"
+            to="/sum/lvl-two"
             className="hover:bg-black hover:text-white hover:p-2 hover:rounded-md hover:transition"
           >
             Siguiente Nivel
