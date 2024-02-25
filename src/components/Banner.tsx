@@ -1,41 +1,21 @@
 import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { type ChangeEvent, useState } from 'react'
+import confetti from 'canvas-confetti'
 
-interface BannerType { title: string, handleModalClick: () => void, icon: string }
+interface BannerType { title: string, handleModalClick: () => void, icon: string, result: number, numberOne: number, numberTwo: number }
 
 export function Banner(props: BannerType) {
-  const [isFigure, setIsFigure] = useState({
-    figureOne: '',
-    figureTwo: '',
-  })
-  const [operation, setOperation] = useState<number | null>(null)
+  const [won, setWon] = useState(false)
 
-  const handleChangeFigure = (key: string, value: string) => {
-    setIsFigure({ ...isFigure, [key]: value })
-    setOperation(null)
+  const onResultKid = async (event: ChangeEvent<HTMLInputElement>) => {
+    if (props.result === Number.parseInt(event.target.value)) {
+      setWon(true)
+      await confetti()
+    }
   }
 
-  const isValidated = () => {
-    if (!isFigure.figureOne && !isFigure.figureTwo)
-      return
-    let result: number | null = null
-
-    if (props.icon === '*')
-      result = Number.parseInt(isFigure.figureOne) * Number.parseInt(isFigure.figureTwo)
-
-    if (props.icon === '-')
-      result = Number.parseInt(isFigure.figureOne) - Number.parseInt(isFigure.figureTwo)
-
-    if (props.icon === '+')
-      result = Number.parseInt(isFigure.figureOne) + Number.parseInt(isFigure.figureTwo)
-
-    if (props.icon === '/')
-      result = Number.parseInt(isFigure.figureOne) / Number.parseInt(isFigure.figureTwo)
-
-    setOperation(result)
-  }
   return (
-    <aside className="bg-white shadow px-4 py-4 sm:px-6 lg:px-8">
+    <aside className="px-4 py-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center">
         <div className="max-w-7xl">
           <h1 className="text-3xl font-bold tracking-tight text-gray-800">
@@ -53,28 +33,17 @@ export function Banner(props: BannerType) {
         </div>
       </div>
       <div className="flex items-center gap-x-6">
-        <input
-          type="text"
-          placeholder="Escribe el primer numero"
-          className="outline-none border border-gray-300 px-2 rounded shadow-md py-1"
-          maxLength={2}
-          onChange={e => handleChangeFigure('figureOne', e.target.value)}
-        />
+        <h2 className="text-7xl">{props.numberOne}</h2>
         <span className="font-bold text-xl">{props.icon}</span>
+        <h2 className="text-7xl">{props.numberTwo}</h2>
+        <span className="font-bold text-xl">=</span>
         <input
           type="text"
-          placeholder="Escribe el segundo numero"
-          className="outline-none border border-gray-300 px-2 rounded shadow-md py-1"
-          maxLength={2}
-          onChange={e => handleChangeFigure('figureTwo', e.target.value)}
+          placeholder="??"
+          className="outline-none border border-gray-300 px-2 rounded shadow-md py-1 w-16"
+          onChange={e => onResultKid(e)}
+          disabled={won}
         />
-        <span className="font-bold text-xl">=</span>
-        <button
-          className="px-2 py-1 bg-zinc-400 shadow-md rounded text-white hover:bg-zinc-600 hover:transition-colors"
-          onClick={isValidated}
-        >
-          {!operation ? 'Calcular' : operation}
-        </button>
       </div>
     </aside>
   )

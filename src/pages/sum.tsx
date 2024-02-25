@@ -18,7 +18,7 @@ import { findSectionContainer, initilizeBoardDrop } from '../utils/board'
 import { BoardDroppableSection } from '../components/BoardSectionDrop'
 import { ItemDraggable } from '../components/ItemDraggable'
 import { useDraggableContext } from '../hooks/useDraggable'
-import { CONCEPTS, INITIAL_DRAGG } from '../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG, RESULTS } from '../utils/constants'
 
 export default function Sum() {
   const {
@@ -126,6 +126,9 @@ export default function Sum() {
         title="Suma - Nivel 1"
         handleModalClick={handleModalClick}
         icon="+"
+        numberOne={RESULTS.sum.lvlOne.numberOne}
+        numberTwo={RESULTS.sum.lvlOne.numberTwo}
+        result={RESULTS.sum.lvlOne.result}
       />
       <Modal
         title={CONCEPTS.sum.title}

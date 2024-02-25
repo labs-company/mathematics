@@ -21,6 +21,7 @@ export const RESULTS = {
     lvlThree: {
       numberOne: 28,
       numberTwo: 15,
+      result: 43,
     },
   },
   res: {
@@ -96,12 +97,12 @@ export const INITIAL_DRAGG: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/airplane-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
     content: '/airplane-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
@@ -116,7 +117,7 @@ export const INITIAL_DRAGG: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/airplane-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
@@ -165,16 +166,6 @@ export const INITIAL_DRAGG_LVL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/heart-svgrepo-com.svg',
-    status: 'done',
-  },
-  {
-    id: uuidv4(),
-    content: '/heart-svgrepo-com.svg',
-    status: 'done',
-  },
-  {
-    id: uuidv4(),
-    content: '/heart-svgrepo-com.svg',
     status: 'backlog',
   },
   {
@@ -185,12 +176,7 @@ export const INITIAL_DRAGG_LVL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/heart-svgrepo-com.svg',
-    status: 'done',
-  },
-  {
-    id: uuidv4(),
-    content: '/heart-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
   },
   {
     id: uuidv4(),
@@ -210,9 +196,59 @@ export const INITIAL_DRAGG_LVL_TWO: ElementDragg[] = [
   {
     id: uuidv4(),
     content: '/heart-svgrepo-com.svg',
-    status: 'done',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'backlog',
   },
 
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/heart-svgrepo-com.svg',
+    status: 'done',
+  },
   {
     id: uuidv4(),
     content: '/heart-svgrepo-com.svg',
@@ -235,6 +271,161 @@ export const INITIAL_DRAGG_LVL_THREE: ElementDragg[] = [
     id: uuidv4(),
     content: '/book-closed-svgrepo-com.svg',
     status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'backlog',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
+  },
+  {
+    id: uuidv4(),
+    content: '/book-closed-svgrepo-com.svg',
+    status: 'done',
   },
   {
     id: uuidv4(),

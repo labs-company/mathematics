@@ -18,7 +18,7 @@ import { findSectionContainer, initilizeBoardDrop } from '../../utils/board'
 import { getElementDraggId } from '../../utils/elementDragg'
 import { BoardDroppableSection } from '../../components/BoardSectionDrop'
 import { ItemDraggable } from '../../components/ItemDraggable'
-import { CONCEPTS, INITIAL_DRAGG_LVL_THREE } from '../../utils/constants'
+import { CONCEPTS, INITIAL_DRAGG_LVL_THREE, RESULTS } from '../../utils/constants'
 
 export default function LevelThreeAdd() {
   const {
@@ -129,6 +129,9 @@ export default function LevelThreeAdd() {
         title="Suma - Level 3"
         handleModalClick={handleModalClick}
         icon="+"
+        numberOne={RESULTS.sum.lvlThree.numberOne}
+        numberTwo={RESULTS.sum.lvlThree.numberTwo}
+        result={RESULTS.sum.lvlThree.result}
       />
       <Modal
         title={CONCEPTS.sum.title}
