@@ -1,16 +1,20 @@
-import { Footer } from './components/Footer'
-import { Navbar } from './components/Navbar'
-import RoutesApplication from './routes/routes'
-import { ErrorBoundary } from './components/ErrorBoundary'
+import { Route } from 'wouter'
+import Navbar from './components/navbar'
+import Sum from './routes/sum'
+import Res from './routes/res'
+import Mul from './routes/mul'
+import Home from './routes/home'
+import Div from './routes/div'
 
 function App() {
   return (
     <>
       <Navbar />
-      <ErrorBoundary>
-        <RoutesApplication />
-      </ErrorBoundary>
-      <Footer />
+      <Route path="/" component={Home} />
+      <Route path="/sum" component={Sum} />
+      <Route path="/res" component={Res} />
+      <Route path="/mul" component={Mul} />
+      <Route path="/div" component={Div} />
     </>
   )
 }
