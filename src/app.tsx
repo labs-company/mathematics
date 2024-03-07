@@ -9,6 +9,8 @@ import SumLvlTwo from './routes/sum-lvl-two'
 import SumLvlThree from './routes/sum-lvl-three'
 import ResLvlTwo from './routes/res-lvl-two'
 import ResLvlThree from './routes/res-lvl-three'
+import MulLvlTwo from './routes/mul-lvl-two'
+import MulLvlThree from './routes/mul-lvl-three'
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Route path="/res" component={Res} />
       <Route path="/res/lvl-two" component={ResLvlTwo} />
       <Route path="/res/lvl-three" component={ResLvlThree} />
+      <Route path="/mul/lvl-two" component={MulLvlTwo} />
+      <Route path="/mul/lvl-three" component={MulLvlThree} />
       <Route path="/mul" component={Mul} />
       <Route path="/div" component={Div} />
     </>
