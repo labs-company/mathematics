@@ -9,11 +9,11 @@ import Image from '../components/image'
 
 const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'character1.txt', 'character2.txt', 'shell32.dll', 'README.txt', 'README12.txt', 'hsl.xx', 'typescript.js']
 
-const boxMocksSecond = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt', 'js.ts', 'rs.go', 'jija.bs']
+const boxMocksSecond = ['map_2.dat', 'character5.txt']
 
 const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.txt', 'character212.txt']
 
-export default function Res() {
+export default function ResLvlTwo() {
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
   })
@@ -28,7 +28,7 @@ export default function Res() {
   return (
     <>
       <Modal concept={{ ...concepts.res }} />
-      <Info operator={{ isRes: true }} operation={{ ...results.res.lvlOne }}>
+      <Info operator={{ isRes: true }} operation={{ ...results.res.lvlTwo }}>
         <Minus />
       </Info>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
@@ -58,8 +58,8 @@ export default function Res() {
           </div>
         </article>
       </section>
-      <nav className="flex justify-end px-6 mt-12">
-        <Link to="/res/lvl-two" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Siguiente Nivel</Link>
+      <nav className="flex justify-end px-6 my-12">
+        <Link to="/res/lvl-three" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Siguiente Nivel</Link>
       </nav>
     </>
   )
