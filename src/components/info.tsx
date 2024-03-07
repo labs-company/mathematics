@@ -2,7 +2,7 @@ import { BadgeInfo, Equal } from 'lucide-react'
 import confetti from 'canvas-confetti'
 import type { ChangeEvent } from 'react'
 import { useState } from 'react'
-import type { ResultProps } from 'types/operator'
+import type { ResultProps } from 'types'
 import { useModal } from '../stores/modal'
 
 export default function Info({ children, operation }: ResultProps) {
