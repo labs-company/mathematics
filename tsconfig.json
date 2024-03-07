@@ -10,7 +10,7 @@
     "moduleResolution": "bundler",
 
     "paths": {
-      "types/*": ["./types/*"]
+      "types": ["./types/index.d.ts"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,

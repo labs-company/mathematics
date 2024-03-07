@@ -1,5 +1,5 @@
 import { XCircle } from 'lucide-react'
-import type { OperationConceptProps } from 'types/concepts'
+import type { OperationConceptProps } from 'types'
 import { useModal } from '../stores/modal'
 
 export default function Modal({ concept }: OperationConceptProps) {
