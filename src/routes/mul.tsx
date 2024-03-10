@@ -11,7 +11,7 @@ const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'characte
 
 const boxMocksSecond = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt', 'js.ts', 'rs.go', 'jija.bs', 'aksjdkla.ss']
 
-const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.txt', 'character212.txt', 'asaas', 'aa', 'asa']
+const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.txt', 'character212.txt', 'asaas', 'aa', 'asa', 'railway.app']
 
 const boxMocksFour = ['asdas.exe', 'sasa.pwd', 'asdasd.sb', 'asdasdas.s', 'h.cc', 'asdasd', 'asdas.sss', 'sxxaxa.xls', 'iaioaoa.xtx']
 
