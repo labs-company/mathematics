@@ -62,8 +62,8 @@ export const results = {
       result: 3.3,
     },
     lvlThree: {
-      numberOne: 20,
-      numberTwo: 6,
+      numberOne: 22,
+      numberTwo: 7,
       result: 3.3,
     },
   },

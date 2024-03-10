@@ -11,6 +11,8 @@ import ResLvlTwo from './routes/res-lvl-two'
 import ResLvlThree from './routes/res-lvl-three'
 import MulLvlTwo from './routes/mul-lvl-two'
 import MulLvlThree from './routes/mul-lvl-three'
+import DivLvlTwo from './routes/div-lvl-two'
+import DivLvlThree from './routes/div-lvl-three'
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
       <Route path="/mul/lvl-three" component={MulLvlThree} />
       <Route path="/mul" component={Mul} />
       <Route path="/div" component={Div} />
+      <Route path="/div/lvl-two" component={DivLvlTwo} />
+      <Route path="/div/lvl-three" component={DivLvlThree} />
     </>
   )
 }
