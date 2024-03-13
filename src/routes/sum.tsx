@@ -1,6 +1,10 @@
 import { Plus } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+
+import { useEffect } from 'react'
+import type { ParentConfig } from '@formkit/drag-and-drop'
+import confetti from 'canvas-confetti'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -9,16 +13,22 @@ import Image from '../components/image'
 
 const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'character1.txt', 'character2.txt', 'shell32.dll', 'README.txt', 'aasdad']
 
-const boxMocksSecond = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt']
+const boxMocksSecond = ['map_2x.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt']
 
 export default function Sum() {
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'A',
-  })
-
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
+    sortable: false,
+
   })
+  const configFirst: Partial<ParentConfig<string>> = { group: 'A' }
+
+  if (rocketsSecond.length === 10) {
+    configFirst.disabled = true
+    confetti()
+  }
+
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, configFirst)
 
   return (
     <>
@@ -44,6 +54,7 @@ export default function Sum() {
               </Box>
             ))}
           </div>
+
         </article>
       </section>
       <nav className="flex justify-end px-6 mt-12">
