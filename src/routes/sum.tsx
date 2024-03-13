@@ -1,8 +1,6 @@
 import { Plus } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
-
-import { useEffect } from 'react'
 import type { ParentConfig } from '@formkit/drag-and-drop'
 import confetti from 'canvas-confetti'
 import Info from '../components/info'
