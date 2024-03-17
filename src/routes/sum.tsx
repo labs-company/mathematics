@@ -14,19 +14,18 @@ const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'characte
 const boxMocksSecond = ['map_2x.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt']
 
 export default function Sum() {
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
-    sortable: false,
-
   })
-  const configFirst: Partial<ParentConfig<string>> = { group: 'A' }
 
-  if (rocketsSecond.length === 10) {
-    configFirst.disabled = true
+  const configSecond: Partial<ParentConfig<string>> = { group: 'A' }
+
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, configSecond)
+
+  if (rocketsFirst.length === 10) {
+    configSecond.disabled = true
     confetti()
   }
-
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, configFirst)
 
   return (
     <>

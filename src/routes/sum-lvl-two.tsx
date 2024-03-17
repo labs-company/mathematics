@@ -1,6 +1,8 @@
 import { Plus } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+import confetti from 'canvas-confetti'
+import type { ParentConfig } from '@formkit/drag-and-drop'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -14,17 +16,20 @@ const boxMocksSecond = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell3
 const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.txt', 'character212.txt', 'asaas', 'aa']
 
 export default function SumLvlTwo() {
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'A',
-  })
+  const configSecond: Partial<ParentConfig<string>> = { group: 'A' }
 
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'A',
-  })
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, { group: 'A' })
+
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, configSecond)
 
   const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
   })
+
+  if (rocketsThree.length === 10) {
+    configSecond.disabled = true
+    confetti()
+  }
 
   return (
     <>

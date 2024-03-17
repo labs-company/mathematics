@@ -1,6 +1,8 @@
 import { Plus } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+import confetti from 'canvas-confetti'
+import type { ParentConfig } from '@formkit/drag-and-drop'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -18,24 +20,30 @@ const boxMocksFour = ['map_2x.dat', 'character5x.txt', 'character8x.txt', 'shell
 const boxMocksFive = ['dungeonx_master.exe', 'mapx_1.dat', 'mapz_2.dat', 'zcharacter1.txtz', 'batman']
 
 export default function SumLvlThree() {
+  const configThree: Partial<ParentConfig<string>> = { group: 'A' }
+
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'A',
+    group: 'B',
   })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'A',
+    group: 'C',
   })
 
-  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
-    group: 'A',
-  })
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, configThree)
 
   const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
-    group: 'A',
+    group: 'D',
   })
+
   const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, {
     group: 'A',
   })
+
+  if (rocketsFive.length === 10) {
+    configThree.disabled = true
+    confetti()
+  }
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />
