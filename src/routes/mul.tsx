@@ -1,6 +1,8 @@
 import { Asterisk } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+import type { ParentConfig } from '@formkit/drag-and-drop'
+import confetti from 'canvas-confetti'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -16,21 +18,30 @@ const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.
 const boxMocksFour = ['asdas.exe', 'sasa.pwd', 'asdasd.sb', 'asdasdas.s', 'h.cc', 'asdasd', 'asdas.sss', 'sxxaxa.xls', 'iaioaoa.xtx']
 
 export default function Mul() {
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'A',
-  })
+  const configFirst: Partial<ParentConfig<string>> = { group: 'A' }
+  const configSecond: Partial<ParentConfig<string>> = { group: 'A' }
+  const configThree: Partial<ParentConfig<string>> = { group: 'A' }
 
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'A',
-  })
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, configFirst)
 
-  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
-    group: 'A',
-  })
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, configSecond)
+
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, configThree)
 
   const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
     group: 'A',
   })
+
+  if (rocketsFirst.length === 10)
+    configFirst.group = 'B'
+
+  if (rocketsSecond.length === 10)
+    configSecond.group = 'D'
+
+  if (rocketsThree.length === 10) {
+    configThree.group = 'F'
+    confetti()
+  }
 
   return (
     <>
