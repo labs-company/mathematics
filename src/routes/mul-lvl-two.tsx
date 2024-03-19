@@ -1,6 +1,8 @@
 import { Asterisk } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+import type { ParentConfig } from '@formkit/drag-and-drop'
+import confetti from 'canvas-confetti'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -20,30 +22,44 @@ const boxMocksFive = ['asdas.exe', 'sasa.pwd', 'asdasd.sb', 'asdasdas.s', 'h.cc'
 const boxMocksSix = ['asdas.exe', 'sasa.pwd', 'asdasd.sb', 'asdasdas.s', 'h.cc', 'asdasd', 'asdas.sss', 'sxxaxa.xls']
 
 export default function MulLvlTwo() {
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'A',
-  })
+  const configFirst: Partial<ParentConfig<string>> = { group: 'A' }
+  const configSecond: Partial<ParentConfig<string>> = { group: 'A' }
+  const configThree: Partial<ParentConfig<string>> = { group: 'A' }
+  const configFour: Partial<ParentConfig<string>> = { group: 'A' }
+  const configFive: Partial<ParentConfig<string>> = { group: 'A' }
+  const configSix: Partial<ParentConfig<string>> = { group: 'A' }
 
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'A',
-  })
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, configFirst)
 
-  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
-    group: 'A',
-  })
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, configSecond)
 
-  const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
-    group: 'A',
-  })
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, configThree)
 
-  const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, {
-    group: 'A',
-  })
+  const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, configFour)
 
-  const [boardSix, rocketsSix] = useDragAndDrop<HTMLDivElement, string>(boxMocksSix, {
-    group: 'A',
-  })
+  const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, configFive)
 
+  const [boardSix, rocketsSix] = useDragAndDrop<HTMLDivElement, string>(boxMocksSix, configSix)
+
+  if (rocketsFirst.length === 10)
+    configFirst.group = 'B'
+
+  if (rocketsSecond.length === 10)
+    configSecond.group = 'D'
+
+  if (rocketsThree.length === 10)
+    configThree.group = 'F'
+
+  if (rocketsFour.length === 10)
+    configFour.group = 'X'
+
+  if (rocketsFive.length === 10)
+    configFive.group = 'Z'
+
+  if (configSix.length === 10) {
+    configSix.group = 'L'
+    confetti()
+  }
   return (
     <>
       <Modal concept={{ ...concepts.mul }} />

@@ -1,5 +1,6 @@
 import { Asterisk } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
+import type { ParentConfig } from '@formkit/drag-and-drop'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -17,25 +18,36 @@ const boxMocksFour = ['asdas.exe', 'sasa.pwd', 'asdasd.sb', 'asdasdas.s', 'h.cc'
 const boxMocksFive = ['asdas-x.exe', 'sasax.pwd', 'asdaxsd.sb', 'asdaxsdas.s', 'hx.cc']
 
 export default function MulLvlThree() {
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'A',
-  })
+  const configFirst: Partial<ParentConfig<string>> = { group: 'A' }
+  const configSecond: Partial<ParentConfig<string>> = { group: 'A' }
+  const configThree: Partial<ParentConfig<string>> = { group: 'A' }
+  const configFour: Partial<ParentConfig<string>> = { group: 'A' }
+  const configFive: Partial<ParentConfig<string>> = { group: 'A' }
 
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'A',
-  })
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, configFirst)
 
-  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
-    group: 'A',
-  })
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, configSecond)
 
-  const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
-    group: 'A',
-  })
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, configThree)
 
-  const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, {
-    group: 'A',
-  })
+  const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, configFour)
+
+  const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, configFive)
+
+  if (rocketsFirst.length === 10)
+    configFirst.group = 'B'
+
+  if (rocketsSecond.length === 10)
+    configSecond.group = 'D'
+
+  if (rocketsThree.length === 10)
+    configThree.group = 'F'
+
+  if (rocketsFour.length === 10)
+    configFour.group = 'X'
+
+  if (rocketsFive.length === 10)
+    configFive.group = 'Z'
   return (
     <>
       <Modal concept={{ ...concepts.mul }} />

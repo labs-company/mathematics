@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@formkit/drag-and-drop':
-    specifier: 0.0.29
-    version: 0.0.29
+    specifier: 0.0.33
+    version: 0.0.33
   canvas-confetti:
     specifier: 1.9.2
     version: 1.9.2
@@ -514,8 +514,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@formkit/drag-and-drop@0.0.29:
-    resolution: {integrity: sha512-0B8evfYVy6Y72Wf14JqN9GLvir0W4qwqUZd2o7OQ030UjnDmk+rUkfn6HIx0ynwJgEEFSLql0vfu0DYEiS122g==}
+  /@formkit/drag-and-drop@0.0.33:
+    resolution: {integrity: sha512-FolIdAU8PpAi+B0LhLVm/amdu03F2AiR4Ac8+8DRAz0QAxYgY1cZJIrl+CBVZ8wQGtXBpXV8ug9Fil1vOMuPvA==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
