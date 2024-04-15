@@ -2,6 +2,7 @@ export interface OperationLevel {
   numberOne: number
   numberTwo: number
   result: number
+  residue?: number
 }
 
 interface OperationResults {

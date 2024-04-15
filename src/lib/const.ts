@@ -54,17 +54,20 @@ export const results = {
     lvlOne: {
       numberOne: 14,
       numberTwo: 5,
-      result: 2.8,
+      result: 2,
+      residue: 4,
     },
     lvlTwo: {
       numberOne: 20,
       numberTwo: 6,
-      result: 3.3,
+      result: 3,
+      residue: 2,
     },
     lvlThree: {
       numberOne: 22,
       numberTwo: 7,
-      result: 3.3,
+      result: 3,
+      residue: 1,
     },
   },
 }
