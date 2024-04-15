@@ -1,11 +1,11 @@
 import { Divide } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
-import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
 import Box from '../components/box'
 import Image from '../components/image'
+import InfoDiv from '../components/infodiv'
 
 const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'character1.txt', 'character2.txt']
 
@@ -29,13 +29,23 @@ export default function Div() {
   return (
     <>
       <Modal concept={{ ...concepts.div }} />
-      <Info operator={{ isDiv: true }} operation={{ ...results.div.lvlOne }}>
+      <InfoDiv operator={{ isDiv: true }} operation={{ ...results.div.lvlOne }}>
         <Divide />
-      </Info>
+      </InfoDiv>
+      <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardFirst} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardFirst} className="size-96 shadow-md bg-red-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
             {rocketsFirst.map(rocket => (
+              <Box key={rocket}>
+                <Image path="/svg/basketball.svg" description={rocket} />
+              </Box>
+            ))}
+          </div>
+        </article>
+        <article className="flex flex-col gap-4 items-center justify-center">
+          <div ref={boardSecond} className="size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
+            {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/basketball.svg" description={rocket} />
               </Box>
@@ -49,17 +59,8 @@ export default function Div() {
             ))}
           </div>
         </article>
-        <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
-            {rocketsSecond.map(rocket => (
-              <Box key={rocket}>
-                <Image path="/svg/basketball.svg" description={rocket} />
-              </Box>
-            ))}
-          </div>
-        </article>
       </section>
-      <nav className="flex justify-end px-6 my-12">
+      <nav className="flex justify-end px-6 my-5">
         <Link to="/div/lvl-two" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Siguiente Nivel</Link>
       </nav>
     </>
