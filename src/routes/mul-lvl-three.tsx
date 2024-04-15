@@ -1,6 +1,7 @@
 import { Asterisk } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import type { ParentConfig } from '@formkit/drag-and-drop'
+import { Link } from 'wouter'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -54,6 +55,7 @@ export default function MulLvlThree() {
       <Info operator={{ isMul: true }} operation={{ ...results.mul.lvlThree }}>
         <Asterisk />
       </Info>
+      <h2 className="text-3xl font-bold text-center">Nivel 3</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
         <article className="flex flex-col gap-4 items-center justify-center">
           <div ref={boardFirst} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
@@ -98,6 +100,10 @@ export default function MulLvlThree() {
           </div>
         </article>
       </section>
+      <nav className="flex justify-between px-6 my-5">
+        <Link to="/mul/lvl-two" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Regresar</Link>
+        <Link to="/mul" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Regresar al Nivel 1</Link>
+      </nav>
     </>
   )
 }
