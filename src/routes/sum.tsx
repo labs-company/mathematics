@@ -24,6 +24,7 @@ export default function Sum() {
 
   if (rocketsFirst.length === 10) {
     configSecond.disabled = true
+    configSecond.group = 'B'
     confetti()
   }
 
@@ -33,9 +34,10 @@ export default function Sum() {
       <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlOne }}>
         <Plus />
       </Info>
+      <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
       <section className="container mx-auto gap-12 flex items-center justify-center mt-10">
         <article>
-          <div ref={boardFirst} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardFirst} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 10 && 'bg-red-400'}`}>
             {rocketsFirst.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
@@ -54,7 +56,7 @@ export default function Sum() {
 
         </article>
       </section>
-      <nav className="flex justify-end px-6 mt-12">
+      <nav className="flex justify-end px-6 pb-2 mt-12">
         <Link to="/sum/lvl-two" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Siguiente Nivel</Link>
       </nav>
     </>

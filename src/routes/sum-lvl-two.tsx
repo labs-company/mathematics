@@ -23,11 +23,17 @@ export default function SumLvlTwo() {
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, configSecond)
 
   const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
-    group: 'A',
+    group: 'C',
   })
 
-  if (rocketsThree.length === 10) {
+  if (rocketsFirst.length === 10) {
     configSecond.disabled = true
+    configSecond.group = 'B'
+    configSecond.group = 'C'
+  }
+  if (rocketsSecond.length === 10) {
+    configSecond.disabled = true
+    configSecond.group = 'B'
     confetti()
   }
 
@@ -37,9 +43,10 @@ export default function SumLvlTwo() {
       <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlTwo }}>
         <Plus />
       </Info>
+      <h2 className="text-3xl font-bold text-center">Nivel 2</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
         <article>
-          <div ref={boardFirst} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardFirst} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 10 && 'bg-red-400'}`}>
             {rocketsFirst.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
@@ -48,7 +55,7 @@ export default function SumLvlTwo() {
           </div>
         </article>
         <article>
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardSecond} className={`size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center ${rocketsSecond.length === 10 && 'bg-red-400'}`}>
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
@@ -64,7 +71,8 @@ export default function SumLvlTwo() {
           </div>
         </article>
       </section>
-      <nav className="flex justify-end px-6 my-12">
+      <nav className="flex justify-between px-6 my-12">
+        <Link to="/sum" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Regresar</Link>
         <Link to="/sum/lvl-three" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Siguiente Nivel</Link>
       </nav>
     </>
