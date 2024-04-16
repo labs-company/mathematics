@@ -9,6 +9,5 @@ interface Operator {
 
 export interface ResultProps {
   operator: Operator
-  children: React.ReactNode
   operation: OperationLevel
 }

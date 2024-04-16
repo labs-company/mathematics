@@ -20,33 +20,63 @@ const boxMocksFour = ['map_2x.dat', 'character5x.txt', 'character8x.txt', 'shell
 const boxMocksFive = ['dungeonx_master.exe', 'mapx_1.dat', 'mapz_2.dat', 'zcharacter1.txtz', 'batman']
 
 export default function SumLvlThree() {
-  const configThree: Partial<ParentConfig<string>> = { group: 'A' }
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
+    group: 'A',
+    dragHandle: '.kanban-handle',
+  })
+
+  const config1: Partial<ParentConfig<string>> = {}
+  config1.accepts = (_parent, lastParent) => {
+    if (lastParent.el === boardThree.current)
+      return false
+
+    return rocketsThree.length > 10
+  }
+
+  const config2: Partial<ParentConfig<string>> = {}
+  config2.accepts = (_parent, lastParent) => {
+    if (lastParent.el === boardThree.current)
+      return false
+
+    return rocketsThree.length > 10
+  }
+  const config3: Partial<ParentConfig<string>> = {}
+  config3.accepts = (_parent, lastParent) => {
+    if (lastParent.el === boardThree.current)
+      return false
+
+    return rocketsThree.length > 10
+  }
+  const config4: Partial<ParentConfig<string>> = {}
+  config4.accepts = (_parent, lastParent) => {
+    if (lastParent.el === boardThree.current)
+      return false
+
+    return rocketsThree.length > 10
+  }
 
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
-    group: 'B',
+    config1,
+    dragHandle: '.kanban-handle',
   })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'C',
+    config2,
+    dragHandle: '.kanban-handle',
   })
 
-  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, configThree)
-
   const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
-    group: 'D',
+    config3,
+    dragHandle: '.kanban-handle',
   })
 
   const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, {
     group: 'A',
   })
 
-  if (rocketsThree.length === 10) {
-    configThree.disabled = true
-    configThree.group = 'D'
-    configThree.group = 'A'
-    configThree.group = 'B'
+  if (rocketsThree.length === 10)
     confetti()
-  }
+
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />

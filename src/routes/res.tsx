@@ -1,4 +1,3 @@
-import { Minus } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
 import Info from '../components/info'
@@ -20,6 +19,7 @@ export default function Res() {
 
   const [boardSecond, rocketsSecond, setRocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardThree, rocketsThree, setRocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
@@ -46,7 +46,6 @@ export default function Res() {
     <>
       <Modal concept={{ ...concepts.res }} />
       <Info operator={{ isRes: true }} operation={{ ...results.res.lvlOne }}>
-        <Minus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">

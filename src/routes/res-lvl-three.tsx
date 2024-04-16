@@ -20,6 +20,7 @@ export default function ResLvlThree() {
 
   const [boardSecond, rocketsSecond, setRocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardThree, rocketsThree, setRocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {

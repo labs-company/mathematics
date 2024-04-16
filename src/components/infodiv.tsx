@@ -5,7 +5,7 @@ import { useState } from 'react'
 import type { ResultProps } from 'types'
 import { useModal } from '../stores/modal'
 
-export default function InfoDiv({ children, operation }: ResultProps) {
+export default function InfoDiv({ operation }: ResultProps) {
   const [won, setWon] = useState(false)
   const [won2, setWon2] = useState(false)
   const onOpen = useModal(state => state.open)
@@ -30,8 +30,7 @@ export default function InfoDiv({ children, operation }: ResultProps) {
           <h3 className="size-16 text-2xl rounded-full outline-none border-2 border-blue-400 flex justify-center items-center">
             {operation.numberOne}
           </h3>
-          {children}
-          <h3 className="size-16 text-2xl rounded-full outline-none border-2 border-blue-400 flex justify-center items-center">
+          <h3 className="w-20 h-14 text-2xl outline-none border-b-2 border-l-2 border-blue-400 flex justify-center items-center">
             {operation.numberTwo}
           </h3>
         </div>

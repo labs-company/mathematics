@@ -16,6 +16,7 @@ const boxMocksSecond = ['map_2x.dat', 'character5.txt', 'character8.txt', 'shell
 export default function Sum() {
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const configSecond: Partial<ParentConfig<string>> = { group: 'A' }
