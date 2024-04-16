@@ -1,5 +1,6 @@
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+import { Minus } from 'lucide-react'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -29,14 +30,11 @@ export default function Res() {
   const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
     if (rocketsThree.length < 8) {
       setRocketsFirst([])
-      // Obtener el ID del elemento soltado
       const droppedItemId = event.dataTransfer.getData('text/plain')
 
-      // Eliminar el elemento soltado de rocketsThree
       const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
       setRocketsThree(updatedRocketsThree)
 
-      // Eliminar dos elementos de rocketsSecond
       const updatedRocketsSecond = rocketsSecond.slice(2)
       setRocketsSecond(updatedRocketsSecond)
     }
@@ -46,6 +44,7 @@ export default function Res() {
     <>
       <Modal concept={{ ...concepts.res }} />
       <Info operator={{ isRes: true }} operation={{ ...results.res.lvlOne }}>
+        <Minus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">

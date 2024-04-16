@@ -31,14 +31,10 @@ export default function ResLvlThree() {
     let updatedRocketsSecond
     if (rocketsThree.length < 4) {
       setRocketsFirst([])
-      // Obtener el ID del elemento soltado
       const droppedItemId = event.dataTransfer.getData('text/plain')
 
-      // Eliminar el elemento soltado de rocketsThree
       const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
       setRocketsThree(updatedRocketsThree)
-
-      // Eliminar dos elementos de rocketsSecond
 
       updatedRocketsSecond = rocketsSecond.slice(2)
       setRocketsSecond(updatedRocketsSecond)
