@@ -28,7 +28,6 @@ export default function ResLvlThree() {
   })
 
   const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
-    let updatedRocketsSecond
     if (rocketsThree.length < 4) {
       setRocketsFirst([])
       const droppedItemId = event.dataTransfer.getData('text/plain')
@@ -36,12 +35,7 @@ export default function ResLvlThree() {
       const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
       setRocketsThree(updatedRocketsThree)
 
-      if (rocketsThree.length === 3) {
-        updatedRocketsSecond = rocketsSecond.slice(3)
-        setRocketsSecond(updatedRocketsSecond)
-      }
-
-      updatedRocketsSecond = rocketsSecond.slice(2)
+      const updatedRocketsSecond = rocketsSecond.slice(2)
       setRocketsSecond(updatedRocketsSecond)
     }
   }
@@ -63,14 +57,14 @@ export default function ResLvlThree() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree}>
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`} onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />

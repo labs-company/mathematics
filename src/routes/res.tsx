@@ -58,14 +58,14 @@ export default function Res() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree}>
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`} onDrop={onDropThree}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`} onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
