@@ -23,27 +23,21 @@ export default function Res() {
     dragHandle: '.kanban-handle',
   })
 
-  const [boardThree, rocketsThree, setRocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
   })
 
-  const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
-    let updatedRocketsSecond
-    if (rocketsThree.length < 5) {
-      setRocketsFirst([])
-      const droppedItemId = event.dataTransfer.getData('text/plain')
+  let updatedRocketsSecond
+  if (rocketsThree.length < 5) {
+    setRocketsFirst([])
 
-      const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
-      setRocketsThree(updatedRocketsThree)
-
-      if (rocketsThree.length === 4) {
-        updatedRocketsSecond = rocketsSecond.slice(3)
-        setRocketsSecond(updatedRocketsSecond)
-      }
-      else {
-        updatedRocketsSecond = rocketsSecond.slice(2)
-        setRocketsSecond(updatedRocketsSecond)
-      }
+    if (rocketsThree.length === 4) {
+      updatedRocketsSecond = rocketsSecond.slice(3)
+      setRocketsSecond(updatedRocketsSecond)
+    }
+    else {
+      updatedRocketsSecond = rocketsSecond.slice(2)
+      setRocketsSecond(updatedRocketsSecond)
     }
   }
 
@@ -65,14 +59,14 @@ export default function Res() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
