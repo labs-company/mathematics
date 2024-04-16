@@ -28,7 +28,6 @@ export default function Res() {
   })
 
   const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
-    let updatedRocketsSecond
     if (rocketsThree.length < 8) {
       setRocketsFirst([])
       const droppedItemId = event.dataTransfer.getData('text/plain')
@@ -36,12 +35,7 @@ export default function Res() {
       const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
       setRocketsThree(updatedRocketsThree)
 
-      if (rocketsThree.length === 7) {
-        updatedRocketsSecond = rocketsSecond.slice(3)
-        setRocketsSecond(updatedRocketsSecond)
-      }
-
-      updatedRocketsSecond = rocketsSecond.slice(2)
+      const updatedRocketsSecond = rocketsSecond.slice(2)
       setRocketsSecond(updatedRocketsSecond)
     }
   }
