@@ -23,15 +23,21 @@ export default function Res() {
     dragHandle: '.kanban-handle',
   })
 
-  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
+  const [boardThree, rocketsThree, setRocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
   })
 
-  if (rocketsThree.length < 8) {
-    setRocketsFirst([])
+  const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
+    if (rocketsThree.length < 8) {
+      setRocketsFirst([])
+      const droppedItemId = event.dataTransfer.getData('text/plain')
 
-    const updatedRocketsSecond = rocketsSecond.slice(2)
-    setRocketsSecond(updatedRocketsSecond)
+      const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
+      setRocketsThree(updatedRocketsThree)
+
+      const updatedRocketsSecond = rocketsSecond.slice(2)
+      setRocketsSecond(updatedRocketsSecond)
+    }
   }
 
   return (
@@ -52,14 +58,14 @@ export default function Res() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`} onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
