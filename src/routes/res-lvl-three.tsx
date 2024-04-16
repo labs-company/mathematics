@@ -36,6 +36,11 @@ export default function ResLvlThree() {
       const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
       setRocketsThree(updatedRocketsThree)
 
+      if (rocketsThree.length === 3) {
+        updatedRocketsSecond = rocketsSecond.slice(3)
+        setRocketsSecond(updatedRocketsSecond)
+      }
+
       updatedRocketsSecond = rocketsSecond.slice(2)
       setRocketsSecond(updatedRocketsSecond)
     }
