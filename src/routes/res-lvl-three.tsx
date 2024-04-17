@@ -51,9 +51,12 @@ export default function Res() {
         <article className="flex flex-col gap-4 items-center justify-center">
           <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
             {rocketsSecond.map(rocket => (
-              <Box key={rocket}>
+              <button
+                key={rocket}
+                className="shadow size-16 bg-white flex items-center justify-center cursor-grab rounded-md"
+              >
                 <Image path="/svg/book.svg" description={rocket} />
-              </Box>
+              </button>
             ))}
           </div>
           <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
