@@ -16,6 +16,7 @@ const boxMocksThree = ['map_2.dat', 'character8.txt', 'shell324.dll', 'README1.t
 export default function Res() {
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
+    dropZone: false,
   })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
@@ -27,7 +28,7 @@ export default function Res() {
     group: 'A',
   })
 
-  if (rocketsThree.length < 4)
+  if (rocketsFirst.length === 0 && rocketsThree.length < 4)
     rocketsSecond.shift()
 
   return (
