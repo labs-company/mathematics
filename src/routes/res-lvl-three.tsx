@@ -28,7 +28,7 @@ export default function Res() {
     group: 'A',
   })
 
-  if (rocketsFirst.length === 0 && rocketsThree.length < 4)
+  if (rocketsThree.length < 4)
     rocketsSecond.pop()
 
   return (
