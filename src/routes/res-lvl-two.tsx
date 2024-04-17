@@ -18,7 +18,7 @@ export default function Res() {
     group: 'A',
   })
 
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
+  const [boardSecond, rocketsSecond, setRocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
     dragHandle: '.kanban-handle',
   })
@@ -27,8 +27,12 @@ export default function Res() {
     group: 'A',
   })
 
-  if (rocketsThree.length < 5)
-    rocketsSecond.shift()
+  function disable() {
+    if (rocketsThree.length < 4) {
+      const newrocketsSecond = rocketsSecond.slice(2)
+      setRocketsSecond(newrocketsSecond)
+    }
+  }
 
   return (
     <>
@@ -48,7 +52,7 @@ export default function Res() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={disable}>
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />

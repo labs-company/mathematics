@@ -7,7 +7,7 @@ import Modal from '../components/modal'
 import Box from '../components/box'
 import Image from '../components/image'
 
-const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'character1.txt', 'character2.txt', 'shell32.dll', 'README.txt', 'README12.txt', 'hsl.xx', 'typescript.js']
+const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_10.dat', 'character1.txt', 'character2.txt', 'shell32.dll', 'README.txt', 'README12.txt', 'hsl.xx', 'typescript.js']
 
 const boxMocksSecond = ['dungeon_master.11exe', 'map_122.dat', 'character5.txt']
 
@@ -19,7 +19,7 @@ export default function Res() {
     dropZone: false,
   })
 
-  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
+  const [boardSecond, rocketsSecond, setRocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
     dragHandle: '.kanban-handle',
   })
@@ -28,8 +28,12 @@ export default function Res() {
     group: 'A',
   })
 
-  if (rocketsThree.length < 4)
-    rocketsSecond.pop()
+  function disable() {
+    if (rocketsThree.length < 4) {
+      const newrocketsSecond = rocketsSecond.slice(2)
+      setRocketsSecond(newrocketsSecond)
+    }
+  }
 
   return (
     <>
@@ -49,19 +53,23 @@ export default function Res() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={disable}>
             {rocketsSecond.map(rocket => (
-              <button
+              <Box
                 key={rocket}
-                className="shadow size-16 bg-white flex items-center justify-center cursor-grab rounded-md"
               >
                 <Image path="/svg/book.svg" description={rocket} />
-              </button>
+              </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
+          <div
+            ref={boardThree}
+            className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}
+          >
             {rocketsThree.map(rocket => (
-              <Box key={rocket}>
+              <Box
+                key={rocket}
+              >
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
