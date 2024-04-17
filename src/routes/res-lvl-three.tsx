@@ -29,10 +29,8 @@ export default function Res() {
   })
 
   function disable() {
-    if (rocketsThree.length < 4) {
-      const newrocketsSecond = rocketsSecond.slice(2)
-      setRocketsSecond(newrocketsSecond)
-    }
+    if (rocketsThree.length < 4)
+      setRocketsSecond(rocketsSecond.splice(2))
   }
 
   return (

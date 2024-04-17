@@ -11,7 +11,7 @@ const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'characte
 
 const boxMocksSecond = ['dungeon_master.11exe', 'map_122.dat']
 
-const boxMocksThree = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt']
+const boxMocksThree = ['map_23.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt']
 
 export default function Res() {
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
@@ -28,10 +28,8 @@ export default function Res() {
   })
 
   function disable() {
-    if (rocketsThree.length < 4) {
-      const newrocketsSecond = rocketsSecond.slice(2)
-      setRocketsSecond(newrocketsSecond)
-    }
+    if (rocketsThree.length < 5)
+      setRocketsSecond(rocketsSecond.splice(2))
   }
 
   return (
