@@ -29,7 +29,7 @@ export default function Res() {
   })
 
   if (rocketsFirst.length === 0 && rocketsThree.length < 4)
-    rocketsSecond.shift()
+    rocketsSecond.pop()
 
   return (
     <>
