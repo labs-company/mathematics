@@ -1,6 +1,6 @@
-import { Minus } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
+import { Minus } from 'lucide-react'
 import Info from '../components/info'
 import { concepts, results } from '../lib/const'
 import Modal from '../components/modal'
@@ -9,42 +9,27 @@ import Image from '../components/image'
 
 const boxMocksFirst = ['dungeon_master.exe', 'map_1.dat', 'map_2.dat', 'character1.txt', 'character2.txt', 'shell32.dll', 'README.txt', 'README12.txt', 'hsl.xx', 'typescript.js']
 
-const boxMocksSecond = ['map_2.dat', 'character5.txt', 'lkajsla']
+const boxMocksSecond = ['dungeon_master.11exe', 'map_122.dat', 'character5.txt']
 
-const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.txt']
+const boxMocksThree = ['map_2.dat', 'character8.txt', 'shell324.dll', 'README1.txt']
 
-export default function ResLvlThree() {
-  const [boardFirst, rocketsFirst, setRocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
+export default function Res() {
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
   })
 
-  const [boardSecond, rocketsSecond, setRocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
     dragHandle: '.kanban-handle',
   })
 
-  const [boardThree, rocketsThree, setRocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
   })
 
-  const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
-    let updatedRocketsSecond
-    if (rocketsThree.length < 4) {
-      setRocketsFirst([])
-      const droppedItemId = event.dataTransfer.getData('text/plain')
+  if (rocketsThree.length < 4)
+    rocketsSecond.shift()
 
-      const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
-      setRocketsThree(updatedRocketsThree)
-
-      if (rocketsThree.length === 3) {
-        updatedRocketsSecond = rocketsSecond.slice(3)
-        setRocketsSecond(updatedRocketsSecond)
-      }
-
-      updatedRocketsSecond = rocketsSecond.slice(2)
-      setRocketsSecond(updatedRocketsSecond)
-    }
-  }
   return (
     <>
       <Modal concept={{ ...concepts.res }} />
@@ -63,7 +48,7 @@ export default function ResLvlThree() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
@@ -80,8 +65,8 @@ export default function ResLvlThree() {
         </article>
       </section>
       <nav className="flex justify-between px-6 my-5">
-        <Link to="/res/lvl-two" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Regresar</Link>
-        <Link to="/res" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Regresar al Nivel 1</Link>
+        <Link to="/res" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Regresar</Link>
+        <Link to="/res/lvl-three" className="hover:bg-black hover:text-white rounded  p-2 duration-300 hover:scale-105">Siguiente Nivel</Link>
       </nav>
     </>
   )

@@ -14,31 +14,21 @@ const boxMocksSecond = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2
 const boxMocksThree = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell324.dll', 'README1.txt', 'js.ts', 'rs.go', 'jija.bs']
 
 export default function Res() {
-  const [boardFirst, rocketsFirst, setRocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
   })
 
-  const [boardSecond, rocketsSecond, setRocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
+  const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
     dragHandle: '.kanban-handle',
   })
 
-  const [boardThree, rocketsThree, setRocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
+  const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
   })
 
-  const onDropThree = (event: React.DragEvent<HTMLDivElement>) => {
-    if (rocketsThree.length < 8) {
-      setRocketsFirst([])
-      const droppedItemId = event.dataTransfer.getData('text/plain')
-
-      const updatedRocketsThree = rocketsThree.filter(item => item !== droppedItemId)
-      setRocketsThree(updatedRocketsThree)
-
-      const updatedRocketsSecond = rocketsSecond.slice(2)
-      setRocketsSecond(updatedRocketsSecond)
-    }
-  }
+  if (rocketsThree.length < 8)
+    rocketsSecond.shift()
 
   return (
     <>
@@ -58,14 +48,14 @@ export default function Res() {
           </div>
         </article>
         <article className="flex flex-col gap-4 items-center justify-center">
-          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center" onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
+          <div ref={boardSecond} className="size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`} onDrop={onDropThree} onDragOver={e => e.preventDefault()}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
