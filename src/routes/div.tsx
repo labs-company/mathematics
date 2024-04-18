@@ -34,7 +34,7 @@ export default function Div() {
       </InfoDiv>
       <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
-        <article className="flex flex-col gap-4 items-center justify-center">
+        <article className="flex gap-4 items-center justify-center">
           <div ref={boardFirst} className="size-96 shadow-md bg-red-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
             {rocketsFirst.map(rocket => (
               <Box key={rocket}>
@@ -42,8 +42,6 @@ export default function Div() {
               </Box>
             ))}
           </div>
-        </article>
-        <article className="flex flex-col gap-4 items-center justify-center">
           <div ref={boardSecond} className="size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>

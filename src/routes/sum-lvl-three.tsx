@@ -29,7 +29,6 @@ export default function SumLvlThree() {
 
   const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
     group: 'A',
-    dragHandle: '.kanban-handle',
   })
 
   const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, {
@@ -51,7 +50,11 @@ export default function SumLvlThree() {
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 3</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
+        {rocketsSecond.length < 4 && (
+          <Plus className="size-16 my-auto" />
+        )}
         <article>
+          <h2 className="font-semibold text-center text-2xl">Decenas</h2>
           <div ref={boardSecond} className="size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
@@ -59,7 +62,7 @@ export default function SumLvlThree() {
               </Box>
             ))}
           </div>
-          <div ref={boardFour} className={`size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center mt-4 ${rocketsFour.length === 10 && 'bg-red-400'}`}>
+          <div ref={boardFour} className={`size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center mt-4 ${rocketsFour.length === 0 && 'hidden'}`}>
             {rocketsFour.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
@@ -68,14 +71,15 @@ export default function SumLvlThree() {
           </div>
         </article>
         <article>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
+          <h2 className="font-semibold text-center text-2xl">Unidades</h2>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center mb-4 ${rocketsThree.length === 0 && 'hidden'}`}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardFive} className="size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center mt-4">
+          <div ref={boardFive} className="size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
             {rocketsFive.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
