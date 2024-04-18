@@ -28,9 +28,9 @@ export const results = {
       result: 7,
     },
     lvlThree: {
-      numberOne: 13,
-      numberTwo: 4,
-      result: 9,
+      numberOne: 25,
+      numberTwo: 8,
+      result: 17,
     },
   },
   mul: {
