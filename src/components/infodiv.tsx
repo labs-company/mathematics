@@ -46,7 +46,7 @@ export default function InfoDiv({ operation }: ResultProps) {
         </div>
       </div>
 
-      <h2 className="text-3xl font-bold text-center mb-10">Hallar el residuo y cociente de la division</h2>
+      <h2 className="text-3xl font-bold text-center mb-10">Hallar el residuo y cociente de la División</h2>
 
       <BadgeInfo size="44" onClick={onOpen} className="cursor-pointer" />
 

@@ -46,7 +46,7 @@ export default function Mul() {
   return (
     <>
       <Modal concept={{ ...concepts.mul }} />
-      <Info operator={{ isMul: true }} operation={{ ...results.mul.lvlOne }} Texto="Halla el resultado de la Multiplicacion">
+      <Info operator={{ isMul: true }} operation={{ ...results.mul.lvlOne }} Texto="Halla el resultado de la Multiplicación">
         <Asterisk />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
