@@ -16,14 +16,17 @@ const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.
 export default function Div() {
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   return (

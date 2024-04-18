@@ -43,11 +43,6 @@ export default function Res() {
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 1</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
-        {rocketsThree.length > 0 && (
-          <div className="my-auto">
-            <Minus className="size-16" />
-          </div>
-        )}
         <article>
           {rocketsFirst.length >= 1 && <h2 className="font-semibold text-center text-2xl">Decenas</h2>}
           <div ref={boardFirst} className={`size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 10 && 'bg-red-400'} ${rocketsFirst.length === 0 && 'hidden'}`}>
@@ -56,6 +51,11 @@ export default function Res() {
                 <Image path="/svg/book.svg" description={rocket} />
               </Box>
             ))}
+          </div>
+          <div className="size-96 bg-transparent flex justify-center items-center">
+            {rocketsThree.length > 0 && (
+              <Minus className="size-16" />
+            )}
           </div>
         </article>
         <article className="flex flex-col items-center justify-center">

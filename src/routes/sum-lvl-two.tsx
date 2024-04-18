@@ -38,9 +38,7 @@ export default function SumLvlTwo() {
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 2</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
-        {rocketsFirst.length === 1 && (
-          <Plus className="size-16 my-auto" />
-        )}
+
         <article>
           <h2 className="font-semibold text-center text-2xl">Decenas</h2>
           <div ref={boardFirst} className="size-96 shadow-md bg-red-400 rounded-lg flex flex-wrap gap-1 items-center justify-center">
@@ -49,6 +47,11 @@ export default function SumLvlTwo() {
                 <Image path="/svg/rocket.svg" description={rocket} />
               </Box>
             ))}
+          </div>
+          <div className="size-96 bg-transparent flex justify-center items-center">
+            {rocketsFirst.length === 1 && (
+              <Plus className="size-16 " />
+            )}
           </div>
         </article>
         <article>

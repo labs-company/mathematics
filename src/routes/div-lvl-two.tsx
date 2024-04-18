@@ -18,18 +18,22 @@ const boxMocksFour = ['xmap_2.dat', 'zzcharacter5.txt', 'sscharacter8.txt', 'sss
 export default function DivLvlTwo() {
   const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardThree, rocketsThree] = useDragAndDrop<HTMLDivElement, string>(boxMocksThree, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
 
   const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
     group: 'A',
+    dragHandle: '.kanban-handle',
   })
   return (
     <>
