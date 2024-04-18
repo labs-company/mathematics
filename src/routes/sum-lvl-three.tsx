@@ -23,12 +23,12 @@ export default function SumLvlThree() {
   })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, {
-    group: 'A',
+    group: 'B',
     dragHandle: '.kanban-handle',
   })
 
   const [boardFour, rocketsFour] = useDragAndDrop<HTMLDivElement, string>(boxMocksFour, {
-    group: 'A',
+    group: 'B',
   })
 
   const [boardFive, rocketsFive] = useDragAndDrop<HTMLDivElement, string>(boxMocksFive, {
@@ -45,7 +45,7 @@ export default function SumLvlThree() {
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />
-      <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlThree }}>
+      <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlThree }} Texto="Halla el resultado de la Suma" rockts={rocketsSecond} resultanimateion={4}>
         <Plus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 3</h2>

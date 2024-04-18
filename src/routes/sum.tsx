@@ -32,7 +32,7 @@ export default function Sum() {
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />
-      <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlOne }}>
+      <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlOne }} Texto="Halla el resultado de la Suma" rockts={rocketsFirst} resultanimateion={10}>
         <Plus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 1</h2>

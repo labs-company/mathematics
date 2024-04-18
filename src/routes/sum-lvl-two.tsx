@@ -15,7 +15,7 @@ const boxMocksSecond = ['map_2.dat', 'character5.txt', 'character8.txt', 'shell3
 const boxMocksThree = ['dungeon_master.11exe', 'map_122.dat', 'map_222.dat', '2.txt', 'character212.txt', 'asaas', 'aa']
 
 export default function SumLvlTwo() {
-  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, { group: 'A' })
+  const [boardFirst, rocketsFirst] = useDragAndDrop<HTMLDivElement, string>(boxMocksFirst, { group: 'B', dragHandle: '.kanban-handle' })
 
   const [boardSecond, rocketsSecond] = useDragAndDrop<HTMLDivElement, string>(boxMocksSecond, { group: 'A' })
 
@@ -33,7 +33,7 @@ export default function SumLvlTwo() {
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />
-      <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlTwo }}>
+      <Info operator={{ isSum: true }} operation={{ ...results.sum.lvlTwo }} Texto="Halla el resultado de la Suma" rockts={rocketsFirst} resultanimateion={2}>
         <Plus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 2</h2>

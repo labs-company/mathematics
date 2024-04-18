@@ -52,7 +52,7 @@ export default function MulLvlThree() {
   return (
     <>
       <Modal concept={{ ...concepts.mul }} />
-      <Info operator={{ isMul: true }} operation={{ ...results.mul.lvlThree }}>
+      <Info operator={{ isMul: true }} operation={{ ...results.mul.lvlThree }} Texto="Halla el resultado de la Multiplicacion">
         <Asterisk />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 3</h2>

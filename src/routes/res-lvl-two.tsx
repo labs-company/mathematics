@@ -38,7 +38,7 @@ export default function Res() {
   return (
     <>
       <Modal concept={{ ...concepts.res }} />
-      <Info operator={{ isRes: true }} operation={{ ...results.res.lvlTwo }}>
+      <Info operator={{ isRes: true }} operation={{ ...results.res.lvlTwo }} Texto="Halla el resultado de la Resta" rockts={rocketsSecond} resultanimateion={7}>
         <Minus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 2</h2>
@@ -70,7 +70,7 @@ export default function Res() {
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 1 && 'pointer-events-none'} ${rocketsThree.length === 0 && 'hidden'}`}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />

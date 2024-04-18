@@ -38,14 +38,14 @@ export default function Res() {
   return (
     <>
       <Modal concept={{ ...concepts.res }} />
-      <Info operator={{ isRes: true }} operation={{ ...results.res.lvlThree }}>
+      <Info operator={{ isRes: true }} operation={{ ...results.res.lvlThree }} Texto="Halla el resultado de la Resta" rockts={rocketsSecond} resultanimateion={7}>
         <Minus />
       </Info>
       <h2 className="text-3xl font-bold text-center">Nivel 3</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
         <article>
           {rocketsFirst.length >= 1 && <h2 className="font-semibold text-center text-2xl">Decenas</h2>}
-          <div ref={boardFirst} className={`size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 10 && 'bg-red-400'} ${rocketsFirst.length === 0 && 'hidden'}`}>
+          <div ref={boardFirst} className={`size-96 shadow-md bg-red-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 1 && 'pointer-events-none'} `}>
             {rocketsFirst.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
@@ -71,7 +71,7 @@ export default function Res() {
           </div>
           <div
             ref={boardThree}
-            className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}
+            className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 2 && 'pointer-events-none'} ${rocketsThree.length === 0 && 'hidden'}`}
           >
             {rocketsThree.map(rocket => (
               <Box

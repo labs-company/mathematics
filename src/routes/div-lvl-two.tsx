@@ -1,4 +1,3 @@
-import { Divide } from 'lucide-react'
 import { useDragAndDrop } from '@formkit/drag-and-drop/react'
 import { Link } from 'wouter'
 import { concepts, results } from '../lib/const'
@@ -38,9 +37,7 @@ export default function DivLvlTwo() {
   return (
     <>
       <Modal concept={{ ...concepts.div }} />
-      <InfoDiv operator={{ isDiv: true }} operation={{ ...results.div.lvlTwo }}>
-        <Divide />
-      </InfoDiv>
+      <InfoDiv operator={{ isDiv: true }} operation={{ ...results.div.lvlTwo }}></InfoDiv>
       <h2 className="text-3xl font-bold text-center">Nivel 2</h2>
       <section className="container mx-auto gap-12 flex items-start justify-center mt-10">
         <article className="flex gap-4 items-end justify-end">

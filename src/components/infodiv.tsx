@@ -36,13 +36,17 @@ export default function InfoDiv({ operation }: ResultProps) {
         </div>
         <div className="flex justify-between">
           <div>
-            <input type="text" className="size-16 text-2xl text-center outline-none rounded-full border-2 border-blue-400" disabled={won2} onChange={onResultKid2} />
+            <input type="text" className="size-16 text-2xl text-center outline-none rounded-full border-2 border-red-800 animate-pulse bg-red-300" disabled={won2} onChange={onResultKid2} />
+            <p>Residuo</p>
           </div>
           <div>
-            <input type="text" className="size-16 text-2xl text-center outline-none rounded-full border-2 border-blue-400" disabled={won} onChange={onResultKid} />
+            <input type="text" className="size-16 text-2xl text-center outline-none rounded-full border-2 border-red-800 animate-pulse bg-red-300" disabled={won} onChange={onResultKid} />
+            <p>Cociente</p>
           </div>
         </div>
       </div>
+
+      <h2 className="text-3xl font-bold text-center mb-10">Hallar el residuo y cociente de la division</h2>
 
       <BadgeInfo size="44" onClick={onOpen} className="cursor-pointer" />
 

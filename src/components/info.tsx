@@ -5,7 +5,7 @@ import { useState } from 'react'
 import type { ResultProps } from 'types'
 import { useModal } from '../stores/modal'
 
-export default function Info({ children, operation }: ResultProps) {
+export default function Info({ children, operation, Texto, resultanimateion, rockts }: ResultProps) {
   const [won, setWon] = useState(false)
   const onOpen = useModal(state => state.open)
 
@@ -27,11 +27,13 @@ export default function Info({ children, operation }: ResultProps) {
           {operation.numberTwo}
         </h3>
         <Equal />
-        <input type="text" className="size-16 text-2xl text-center outline-none rounded-full border-2 border-blue-400" disabled={won} onChange={onResultKid} />
+        <div>
+          <input type="text" className={`size-16 text-2xl text-center outline-none rounded-full border-2 border-red-800  ${rockts?.length === resultanimateion && 'animate-pulse bg-red-300'} `} disabled={won} onChange={onResultKid} />
+          <p>resultado</p>
+        </div>
       </div>
-
+      <h2 className="text-3xl font-bold text-center">{Texto}</h2>
       <BadgeInfo size="44" onClick={onOpen} className="cursor-pointer" />
-
     </aside>
 
   )

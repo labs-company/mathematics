@@ -9,6 +9,9 @@ interface Operator {
 
 export interface ResultProps {
   operator: Operator
-  children?: React.ReactNode
   operation: OperationLevel
+  children?: React.ReactNode
+  Texto?: string
+  resultanimateion?: number
+  rockts?: string[]
 }
