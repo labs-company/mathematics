@@ -35,9 +35,6 @@ export default function Res() {
   if (rocketsSecond.length === 3)
     rocketsSecond.push('dawdaw', 'dwadwda', 'dwadwawd', 'ajnjabdjwbad', 'daknwdianwdioa', 'dkanwdianwdoiw', 'dkawndnwiadn', 'knaodinaw3d', 'wdnandjwa777')
 
-  if (rocketsSecond.length === 10)
-    rocketsSecond.splice(0, 9)
-
   return (
     <>
       <Modal concept={{ ...concepts.res }} />

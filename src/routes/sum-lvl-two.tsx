@@ -30,6 +30,9 @@ export default function SumLvlTwo() {
     confetti()
   }
 
+  if (rocketsSecond.length === 10)
+    rocketsSecond.splice(0, 9)
+
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />
