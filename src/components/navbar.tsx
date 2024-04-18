@@ -27,8 +27,9 @@ const navbar = [
 export default function Navbar() {
   return (
     <header className="flex justify-between items-center px-8 py-4 shadow-md">
-      <Link href="/">
+      <Link href="/" className="flex gap-1 items-center font-medium text-2xl">
         <img src="/logo.png" className="size-10 object-cover cursor-pointer" />
+        <h1>Opera Sodt</h1>
       </Link>
       <nav className="flex items-center gap-8 justify-center">
         {navbar.map((el, i) => (

@@ -1,4 +1,5 @@
 import confetti from 'canvas-confetti'
+import { Link } from 'wouter'
 
 export default function Home() {
   return (
@@ -10,12 +11,7 @@ export default function Home() {
             Aprende Matematicas arrastrando y soltando y complemetando las
             decenas con Dixon
           </p>
-          <button
-            className="uppercase bg-blue-700 text-white p-4 hover:bg-blue-900 w-64"
-            onClick={() => confetti()}
-          >
-            Comienza ahora!
-          </button>
+          <Link to="/sum" className="uppercase bg-blue-700 text-white p-4 hover:bg-blue-900 w-64" onClick={() => confetti()}>Comienza ahora!</Link>
         </article>
         <figure className="h-full">
           <img src="/fondo.png" alt="" className="object-cover aspect-video h-full" />
