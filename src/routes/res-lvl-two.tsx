@@ -35,6 +35,9 @@ export default function Res() {
   if (rocketsSecond.length === 3)
     rocketsSecond.push('dawdaw', 'dwadwda', 'dwadwawd', 'ajnjabdjwbad', 'daknwdianwdioa', 'dkanwdianwdoiw', 'dkawndnwiadn', 'knaodinaw3d', 'wdnandjwa777')
 
+  if (rocketsSecond.length === 10)
+    rocketsSecond.splice(0, 9)
+
   return (
     <>
       <Modal concept={{ ...concepts.res }} />
@@ -60,7 +63,7 @@ export default function Res() {
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsThree.length === 0 && 'hidden'}`}>
+          <div ref={boardThree} className={`size-96 shadow-md bg-blue-400 rounded-lg flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 3 && 'hidden'}`}>
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/book.svg" description={rocket} />
