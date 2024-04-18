@@ -30,9 +30,6 @@ export default function SumLvlTwo() {
     confetti()
   }
 
-  if (rocketsSecond.length === 10)
-    rocketsSecond.splice(0, 9)
-
   return (
     <>
       <Modal concept={{ ...concepts.sum }} />
@@ -51,14 +48,14 @@ export default function SumLvlTwo() {
           </div>
         </article>
         <article>
-          <div ref={boardSecond} className={`size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center ${rocketsFirst.length === 2 && 'hidden'}`}>
+          <div ref={boardSecond} className={`size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center mb-4 ${rocketsFirst.length === 2 && 'hidden'}`}>
             {rocketsSecond.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
               </Box>
             ))}
           </div>
-          <div ref={boardThree} className="size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center mt-4">
+          <div ref={boardThree} className="size-96 shadow-md bg-blue-400 rounded-lg px-4 py-2 flex flex-wrap gap-1 items-center justify-center">
             {rocketsThree.map(rocket => (
               <Box key={rocket}>
                 <Image path="/svg/rocket.svg" description={rocket} />
